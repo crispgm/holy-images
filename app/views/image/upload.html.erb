@@ -1,0 +1,26 @@
+<div class="section upload">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        上传图片
+      </div>
+      <%= form_for :image, method: :post, url: '/image/create' do |f| %>
+      <div class="section-content">
+        <%= f.label "标题" %>
+        <%= f.text_field :title %>
+      </div>
+      <div class="section-content">
+        <%= f.label "用户名" %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="section-content">
+        <%= f.label "图片" %>
+        <%= f.text_field :url %>
+      </div>
+      <div class="section-content">
+        <%= f.submit "上传" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

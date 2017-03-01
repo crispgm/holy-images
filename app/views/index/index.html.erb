@@ -1,0 +1,38 @@
+<% flash.each do |type, msg| %>
+<div class="section">
+  <div class="section-wrap <%= type %>">
+    <div id="flash-message" class="section-title">
+      <%= msg %>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<% @images.each do |img| %>
+<div class="section">
+  <div class="section-wrap hover-effect">
+    <div class="section-item">
+      <div class="section-time">
+        <%= img.created_at.strftime("%H:%M") %>
+        <% unless img.created_at.today? %>
+          <%= img.created_at.strftime("%Y-%m-%d") %>
+        <% end %>
+      </div>
+      <div class="section-title">
+        <%= img.title %>
+      </div>
+      <div class="section-content">
+        <%= image_tag(img.url) %>
+      </div>
+      <div class="section-footer">
+        <span class="section-icon left">
+          <%= image_tag(img.user.gravatar_url, :class => "gravatar") %>
+        </span>
+        <span class="section-channel left">
+          <%= img.user.name %>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

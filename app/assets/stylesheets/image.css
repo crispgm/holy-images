@@ -1,0 +1,7 @@
+.upload input[type=text] {
+  width: 100%;
+}
+img.gravatar {
+  width: 2rem;
+  height: 2rem;
+}
