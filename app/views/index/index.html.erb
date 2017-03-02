@@ -25,8 +25,12 @@
         <%= image_tag(img.url) %>
       </div>
       <div class="section-action">
-        点赞
-        评论
+        <% if img.likes.count > 0 %>
+          <%= link_to "点赞 #{img.likes.count}", "/image/like/#{img.id}", remote: true, method: :post %>
+        <% else %>
+          <%= link_to "点赞", "/image/like/#{img.id}", remote: true, method: :post %>
+        <% end %>
+        <%= link_to "评论", "/image/#{img.id}#comment" %>
       </div>
       <div class="section-footer">
         <div class="section-footer-icon">
