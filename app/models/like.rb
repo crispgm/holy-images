@@ -4,4 +4,9 @@ class Like < ApplicationRecord
 
   belongs_to :user
   belongs_to :image
+
+  default_scope do
+    order(updated_at: :desc)
+    where(status: STATUS_LIKE)
+  end
 end

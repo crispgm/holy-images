@@ -1,4 +1,9 @@
 class ImageController < ApplicationController
+  def item
+    @image = Image.find(params[:id])
+    @likes = Like.where(image_id: @image.id)
+  end
+
   def upload
   end
 

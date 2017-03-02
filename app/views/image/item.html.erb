@@ -1,14 +1,12 @@
-<% flash.each do |type, msg| %>
 <div class="section">
-  <div class="section-wrap <%= type %>">
-    <div id="flash-message" class="section-title">
-      <%= msg %>
+  <div class="section-wrap info">
+    <div class="section-title">
+      <%= link_to "返回", controller: "index", action: "index" %>
     </div>
   </div>
 </div>
-<% end %>
 
-<% @images.each do |img| %>
+<% img = @image %>
 <div class="section">
   <div class="section-wrap hover-effect">
     <div class="section-item">
@@ -19,17 +17,10 @@
         <% end %>
       </div>
       <div class="section-title">
-        <%= link_to img.title, "/image/#{img.id}" %>
+        <%= img.title %>
       </div>
       <div class="section-content">
-        <%= link_to(image_tag(img.url), "/image/#{img.id}") %>
-      </div>
-      <div class="section-action">
-        <%= link_to "点赞", "/image/like/#{img.id}", remote: true, method: :post %>
-        <% if img.likes.count > 0 %>
-          <%= img.likes.count %>
-        <% end %>
-        <%= link_to "评论", "/image/#{img.id}#comment" %>
+        <%= image_tag(img.url) %>
       </div>
       <div class="section-footer">
         <div class="section-footer-icon">
@@ -42,4 +33,29 @@
     </div>
   </div>
 </div>
-<% end %>
+
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-title">
+      点赞的人
+    </div>
+    <div class="section-content">
+      <% @likes.each do |like| %>
+      <div class="section-time">
+        <%= like.updated_at.strftime("%Y-%m-%d %H:%M") %>
+      </div>
+      <div>
+        <%= like.user.name %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="comment" class="section">
+  <div class="section-wrap">
+    <div class="section-title">
+      评论
+    </div>
+  </div>
+</div>
