@@ -24,13 +24,17 @@
       <div class="section-content">
         <%= image_tag(img.url) %>
       </div>
+      <div class="section-action">
+        点赞
+        评论
+      </div>
       <div class="section-footer">
-        <span class="section-icon left">
+        <div class="section-footer-icon">
           <%= image_tag(img.user.gravatar_url, :class => "gravatar") %>
-        </span>
-        <span class="section-channel left">
+        </div>
+        <div class="section-footer-name">
           <%= img.user.name %>
-        </span>
+        </div>
       </div>
     </div>
   </div>
