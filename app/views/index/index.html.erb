@@ -8,38 +8,6 @@
 </div>
 <% end %>
 
-<% @images.each do |img| %>
-<div class="section">
-  <div class="section-wrap hover-effect">
-    <div class="section-item">
-      <div class="section-time">
-        <%= img.created_at.strftime("%H:%M") %>
-        <% unless img.created_at.today? %>
-          <%= img.created_at.strftime("%Y-%m-%d") %>
-        <% end %>
-      </div>
-      <div class="section-title">
-        <%= link_to img.title, "/image/#{img.id}" %>
-      </div>
-      <div class="section-content">
-        <%= link_to(image_tag(img.url), "/image/#{img.id}") %>
-      </div>
-      <div class="section-action">
-        <%= link_to "点赞", "/image/like/#{img.id}", remote: true, method: :post %>
-        <% if img.likes.count > 0 %>
-          <%= img.likes.count %>
-        <% end %>
-        <%= link_to "评论", "/image/#{img.id}#comment" %>
-      </div>
-      <div class="section-footer">
-        <div class="section-footer-icon">
-          <%= image_tag(img.user.gravatar_url, :class => "gravatar") %>
-        </div>
-        <div class="section-footer-name">
-          <%= img.user.name %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<% @images.each do |image| %>
+  <%= render partial: "image/image", object: image %>
 <% end %>

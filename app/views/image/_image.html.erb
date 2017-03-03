@@ -1,0 +1,43 @@
+<div class="section">
+  <div class="section-wrap hover-effect">
+    <div class="section-item">
+      <div class="section-time">
+        <%= image.created_at.strftime("%H:%M") %>
+        <% unless image.created_at.today? %>
+          <%= image.created_at.strftime("%Y-%m-%d") %>
+        <% end %>
+      </div>
+      <div class="section-title">
+        <% if defined?(nolink) && nolink == true %>
+          <%= image.title %>
+        <% else %>
+          <%= link_to image.title, "/image/#{image.id}" %>
+        <% end %>
+      </div>
+      <div class="section-content">
+        <% if defined?(nolink) && nolink == true %>
+          <%= image_tag(image.url) %>
+        <% else %>
+          <%= link_to(image_tag(image.url), "/image/#{image.id}") %>
+        <% end %>
+      </div>
+      <div class="section-action">
+        <% unless defined?(nolink) && nolink == true %>
+          <%= link_to "点赞", "/image/like/#{image.id}", remote: true, method: :post %>
+          <% if image.likes.count > 0 %>
+            <%= image.likes.count %>
+          <% end %>
+          <%= link_to "评论", "/image/#{image.id}#comment" %>
+        <% end %>
+      </div>
+      <div class="section-footer">
+        <div class="section-footer-icon">
+          <%= image_tag(image.user.gravatar_url, :class => "gravatar") %>
+        </div>
+        <div class="section-footer-name">
+          <%= image.user.name %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
