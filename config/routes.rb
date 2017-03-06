@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "user/new" => "user#new"
   get "user/sign-in" => "user#sign_in"
   post "user/create" => "user#create"
+  post "user/login" => "user#login"
 
   root "index#index"
 end

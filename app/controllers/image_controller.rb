@@ -24,8 +24,6 @@ class ImageController < ApplicationController
     image_id = params[:id]
     # check existence
     @like = Like.find_by(image_id: image_id, user_id: 1) # TODO
-    logger.info("aaaa")
-    logger.info(@like.inspect)
 
     unless @like == nil
       if @like.status == Like::STATUS_LIKE

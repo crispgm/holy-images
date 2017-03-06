@@ -18,8 +18,8 @@
         </div>
         <div class="site-menu">
           <span><%= link_to "Home", controller: "index", action: "index" %></span>
-          <span>Explore</span>
-          <span><%= link_to "New", controller: "image", action: "upload" %></span>
+          <span><%= link_to "Explore" %></span>
+          <%= render "layouts/user" %>
         </div>
       </header>
       <%= yield %>

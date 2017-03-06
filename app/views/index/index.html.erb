@@ -8,8 +8,7 @@
 </div>
 <% end %>
 
-<% @login = false %>
-<% unless @login %>
+<% unless logged_in? %>
   <div class="section">
     <div class="section-wrap hint">
       <div id="sign-up" class="section-title">
