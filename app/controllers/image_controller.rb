@@ -8,8 +8,7 @@ class ImageController < ApplicationController
   end
 
   def create
-    @image = Image.new(params.require(:image).permit(:title, :url))
-    # TODO
+    @image = Image.new(params.require(:image).permit(:title, :url, :img_file))
     @image.user = User.find(1)
 
     if @image.save
