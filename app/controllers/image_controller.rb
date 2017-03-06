@@ -12,7 +12,7 @@ class ImageController < ApplicationController
     @image.user = User.find(1)
 
     if @image.save
-      flash[:info] = "上传成功"
+      flash[:info] = "Upload successfully."
     else
       flash[:warning] = @image.errors.messages
     end

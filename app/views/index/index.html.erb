@@ -8,6 +8,18 @@
 </div>
 <% end %>
 
+<% @login = false %>
+<% unless @login %>
+  <div class="section">
+    <div class="section-wrap hint">
+      <div id="sign-up" class="section-title">
+        <%= link_to "Sign Up", "/user/new" %> /
+        <%= link_to "Sign In", "/user/sign-in" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <% @images.each do |image| %>
   <%= render partial: "image/image", object: image %>
 <% end %>

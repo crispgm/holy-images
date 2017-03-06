@@ -6,4 +6,6 @@ class User < ApplicationRecord
   # gravatar support
   include Gravtastic
   gravtastic
+
+  attr_accessor :password_confirm
 end

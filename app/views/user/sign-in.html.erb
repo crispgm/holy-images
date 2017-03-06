@@ -1,0 +1,22 @@
+<div class="section upload">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div id="sign-in" class="section-title">
+          Login
+      </div>
+      <%= form_for :user, method: :post, url: '/user/login' do |f| %>
+      <div class="section-content">
+        <%= f.label "Email" %>
+        <%= f.text_field :email %>
+      </div>
+      <div class="section-content">
+        <%= f.label "Password" %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="section-content">
+        <%= f.submit "Login" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
