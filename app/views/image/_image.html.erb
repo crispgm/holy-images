@@ -23,11 +23,11 @@
       </div>
       <div class="section-action">
         <% unless defined?(nolink) && nolink == true %>
-          <%= link_to "点赞", "/image/like/#{image.id}", remote: true, method: :post %>
+          <%= link_to "Like", "/image/like/#{image.id}", remote: true, method: :post %>
           <% if image.likes.count > 0 %>
             <%= image.likes.count %>
           <% end %>
-          <%= link_to "评论", "/image/#{image.id}#comment" %>
+          <%= link_to "Comment", "/image/#{image.id}#comment" %>
         <% end %>
       </div>
       <div class="section-footer">

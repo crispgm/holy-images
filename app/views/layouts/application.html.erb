@@ -17,8 +17,9 @@
           <%= link_to "HolyImage", controller: "index", action: "index" %>
         </div>
         <div class="site-menu">
-          <span><%= link_to "首页", controller: "index", action: "index" %></span>
-          <span><%= link_to "上传", controller: "image", action: "upload" %></span>
+          <span><%= link_to "Home", controller: "index", action: "index" %></span>
+          <span>Explore</span>
+          <span><%= link_to "New", controller: "image", action: "upload" %></span>
         </div>
       </header>
       <%= yield %>

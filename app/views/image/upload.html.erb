@@ -2,24 +2,24 @@
   <div class="section-wrap">
     <div class="section-item">
       <div class="section-title">
-        上传图片
+        New photo
       </div>
       <%= form_for :image, method: :post, url: '/image/create', html: { multipart: true } do |f| %>
       <div class="section-content">
-        <%= f.label "标题" %>
+        <%= f.label "Title" %>
         <%= f.text_field :title %>
       </div>
       <div class="section-content">
-        <%= f.label "用户名" %>
+        <%= f.label "Username" %>
         <%= f.text_field :name %>
       </div>
       <div class="section-content">
-        <%= f.label "图片" %>
+        <%= f.label "Image" %>
         <%= f.text_field :url %>
         <%= f.file_field :img_file %>
       </div>
       <div class="section-content">
-        <%= f.submit "上传" %>
+        <%= f.submit "Post" %>
       </div>
       <% end %>
     </div>
