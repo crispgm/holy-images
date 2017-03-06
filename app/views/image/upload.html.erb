@@ -4,7 +4,7 @@
       <div class="section-title">
         上传图片
       </div>
-      <%= form_for :image, method: :post, url: '/image/create' do |f| %>
+      <%= form_for :image, method: :post, url: '/image/create', html: { multipart: true } do |f| %>
       <div class="section-content">
         <%= f.label "标题" %>
         <%= f.text_field :title %>
@@ -16,6 +16,7 @@
       <div class="section-content">
         <%= f.label "图片" %>
         <%= f.text_field :url %>
+        <%= f.file_field :img_file %>
       </div>
       <div class="section-content">
         <%= f.submit "上传" %>
