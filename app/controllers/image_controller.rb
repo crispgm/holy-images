@@ -6,6 +6,12 @@ class ImageController < ApplicationController
     @likes = Like.where(image_id: @image.id)
   end
 
+  def explore
+    @explore = {}
+    @explore[:weekly_top] = weekly_top_list
+    render "image/explore"
+  end
+
   def upload
   end
 
@@ -67,5 +73,9 @@ class ImageController < ApplicationController
     @initial_like.image = Image.find(image_id)
     @initial_like.status = Like::STATUS_LIKE
     @initial_like.save
+  end
+
+  def weekly_top_list
+    Image.unscoped.joins(:likes).group("likes.image_id").order("count(likes.id) desc")
   end
 end

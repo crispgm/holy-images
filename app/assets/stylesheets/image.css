@@ -5,3 +5,24 @@ img.gravatar {
   width: 2rem;
   height: 2rem;
 }
+.section-explore {
+  display: flex;
+  flex-wrap: wrap;
+}
+.section-square {
+  padding-left: .4rem;
+  padding-top: .2rem;
+}
+.section-square img {
+  width: 19.6rem;
+  height: 19.6rem;
+}
+.section-overlay {
+  width: 20rem;
+  height: 20rem;
+  line-height: 20rem;
+  position: absolute;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}

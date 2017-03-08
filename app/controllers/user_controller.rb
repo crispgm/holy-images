@@ -22,6 +22,7 @@ class UserController < ApplicationController
 
   def info
     @user = User.find_by(name: params[:name])
+    @images = Image.where(user: @user.id).limit(10)
     render "user/user"
   end
 

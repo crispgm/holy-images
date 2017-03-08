@@ -1,0 +1,36 @@
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        Explore
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        Weekly Top List
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-explore">
+      <% @explore[:weekly_top].each do |image| %>
+      <a href="/image/<%= image.id %>">
+      <div class="section-square">
+        <div class="section-overlay">
+          <%= image.likes.count %>
+        </div>
+        <%= image_tag(image.img_url(:thumbnail)) %>
+      </div>
+      </a>
+      <% end %>
+    </div>
+  </div>
+</div>

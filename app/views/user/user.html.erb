@@ -17,7 +17,12 @@
       <div class="section-title">
         Image uploaded
       </div>
-      <div class="section-content">
+      <div class="section-explore">
+      <% @images.each do |image| %>
+        <div class="section-square">
+          <%= link_to(image_tag(image.img_url(:thumbnail)), "/image/#{image.id}") %>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>
