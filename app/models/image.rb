@@ -18,7 +18,7 @@ class Image < ApplicationRecord
     end
   end
 
-  def img_url
-    url.blank? ? img_file(:thumbnail) : url
+  def img_url(style = :thumbnail)
+    url.blank? ? img_file(style) : url
   end
 end

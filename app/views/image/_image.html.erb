@@ -1,3 +1,6 @@
+<% unless defined?(style) %>
+  <% style = :thumbnail %>
+<% end %>
 <div class="section">
   <div class="section-wrap hover-effect">
     <div class="section-item">
@@ -16,16 +19,16 @@
       </div>
       <div class="section-content">
         <% if defined?(nolink) && nolink == true %>
-          <%= image_tag(image.img_url) %>
+          <%= image_tag(image.img_url(style)) %>
         <% else %>
-          <%= link_to(image_tag(image.img_url), "/image/#{image.id}") %>
+          <%= link_to(image_tag(image.img_url(style)), "/image/#{image.id}") %>
         <% end %>
       </div>
       <div class="section-action">
         <% unless defined?(nolink) && nolink == true %>
           <%= link_to "Like", "/image/like/#{image.id}", remote: true, method: :post %>
           <% if image.likes.count > 0 %>
-            <%= image.likes.count %>
+            - <%= image.likes.count %>
           <% end %>
         <% end %>
       </div>

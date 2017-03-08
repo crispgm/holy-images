@@ -1,4 +1,6 @@
 class ImageController < ApplicationController
+  include UserHelper
+
   def item
     @image = Image.find(params[:id])
     @likes = Like.where(image_id: @image.id)
@@ -22,8 +24,9 @@ class ImageController < ApplicationController
 
   def like
     image_id = params[:id]
+    user_id = current_user.id
     # check existence
-    @like = Like.find_by(image_id: image_id, user_id: 1) # TODO
+    @like = Like.find_by(image_id: image_id, user_id: user_id)
 
     unless @like == nil
       if @like.status == Like::STATUS_LIKE
@@ -43,7 +46,7 @@ class ImageController < ApplicationController
         end
       end
     else
-      new_like(image_id, 1)
+      new_like(image_id, user_id)
       respond_to do |format|
         format.json do
           render json: @initial_like
@@ -56,7 +59,6 @@ class ImageController < ApplicationController
   def new_like(image_id, user_id)
     # add new
     @initial_like = Like.new
-    # TODO
     @initial_like.user = User.find(user_id)
     @initial_like.image = Image.find(image_id)
     @initial_like.status = Like::STATUS_LIKE
