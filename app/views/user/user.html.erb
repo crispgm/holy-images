@@ -1,0 +1,37 @@
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-time">
+        Joined at <%= @user.created_at.strftime("%Y-%m-%d") %>
+      </div>
+      <div class="section-title">
+        <%= @user.name %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        Image uploaded
+      </div>
+      <div class="section-content">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-wrap warning">
+    <div class="section-item">
+      <div class="section-title">
+        Operations
+      </div>
+      <div class="section-content">
+        <%= link_to "Logout", "/user/logout", remote: true, method: :post %>
+      </div>
+    </div>
+  </div>
+</div>

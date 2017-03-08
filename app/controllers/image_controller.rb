@@ -10,13 +10,17 @@ class ImageController < ApplicationController
   end
 
   def create
-    @image = Image.new(params.require(:image).permit(:title, :url, :img_file))
-    @image.user = User.find(1)
+    if logged_in?
+      @image = Image.new(params.require(:image).permit(:title, :url, :img_file))
+      @image.user = User.find(current_user.id)
 
-    if @image.save
-      flash[:info] = "Upload successfully."
+      if @image.save
+        flash[:info] = "Upload successfully."
+      else
+        flash[:warning] = @image.errors.messages
+      end
     else
-      flash[:warning] = @image.errors.messages
+      flash[:warning] = "Only registered user can upload."
     end
 
     redirect_to root_url

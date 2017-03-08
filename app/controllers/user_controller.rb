@@ -20,6 +20,11 @@ class UserController < ApplicationController
     redirect_to root_url
   end
 
+  def info
+    @user = User.find_by(name: params[:name])
+    render "user/user"
+  end
+
   def login
     email = params[:user][:email]
     password = encrypt_password(params[:user][:password])
@@ -34,6 +39,10 @@ class UserController < ApplicationController
     end
 
     redirect_to root_url
+  end
+
+  def logout
+    log_off(current_user)
   end
 
   private

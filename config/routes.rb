@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "user/sign-in" => "user#sign_in"
   post "user/create" => "user#create"
   post "user/login" => "user#login"
+  post "user/logout" => "user#logout"
+  get "u/:name" => "user#info"
 
   root "index#index"
 end

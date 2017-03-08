@@ -37,7 +37,7 @@
           <%= image_tag(image.user.gravatar_url, :class => "gravatar") %>
         </div>
         <div class="section-footer-name">
-          <%= image.user.name %>
+          <%= link_to "#{image.user.name}", "/u/#{image.user.name}" %>
         </div>
       </div>
     </div>
