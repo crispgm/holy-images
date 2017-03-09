@@ -1,6 +1,8 @@
 class ImageController < ApplicationController
   include UserHelper
 
+  before_action :require_login, only: [:upload, :create, :like]
+
   def item
     @image = Image.find(params[:id])
     @likes = Like.where(image_id: @image.id)
@@ -16,17 +18,13 @@ class ImageController < ApplicationController
   end
 
   def create
-    if logged_in?
-      @image = Image.new(params.require(:image).permit(:title, :url, :img_file))
-      @image.user = User.find(current_user.id)
+    @image = Image.new(params.require(:image).permit(:title, :url, :img_file))
+    @image.user = User.find(current_user.id)
 
-      if @image.save
-        flash[:info] = "Upload successfully."
-      else
-        flash[:warning] = @image.errors.messages
-      end
+    if @image.save
+      flash[:info] = "Upload successfully."
     else
-      flash[:warning] = "Only registered user can upload."
+      flash[:warning] = @image.errors.messages
     end
 
     redirect_to root_url
@@ -66,6 +64,13 @@ class ImageController < ApplicationController
   end
 
   private
+  def require_login
+    unless logged_in?
+      flash[:warning] = "Please register an account."
+      redirect_to root_url
+    end
+  end
+
   def new_like(image_id, user_id)
     # add new
     @initial_like = Like.new
