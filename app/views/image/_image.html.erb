@@ -28,7 +28,7 @@
         <% unless defined?(nolink) && nolink == true %>
           <%= link_to "Like", "/image/like/#{image.id}", remote: true, method: :post %>
           <% if image.likes.count > 0 %>
-            - <%= image.likes.count %>
+            ❤️ <%= image.likes.count %>
           <% end %>
         <% end %>
       </div>
