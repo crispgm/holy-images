@@ -23,6 +23,7 @@ img.gravatar {
   line-height: 20rem;
   position: absolute;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: bold;
+  -webkit-text-stroke: 1px white;
 }
