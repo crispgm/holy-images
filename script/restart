@@ -1,0 +1,4 @@
+#!/bin/bash
+
+kill -9 `cat tmp/pids/server.pid`
+RAILS_SERVE_STATIC_FILES=true PORT=13000 bin/rails server -e production -d
