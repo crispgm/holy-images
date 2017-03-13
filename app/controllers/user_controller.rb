@@ -11,7 +11,7 @@ class UserController < ApplicationController
 
     @user = User.new(params.require(:user).permit(:email, :name, :password, :password_confirmation))
     if @user.save
-      log_in(user)
+      log_in(@user)
       flash[:info] = "Register successfully"
     else
       flash[:warning] = @user.errors.messages
