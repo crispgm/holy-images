@@ -11,6 +11,26 @@
   </div>
 </div>
 
+<% if logged_in? %>
+<div class="section">
+  <div class="section-wrap info">
+    <div class="section-item">
+      <div class="section-title">
+        Operations
+      </div>
+      <div class="section-content">
+        <div>
+          <%= link_to "Update Gravatar", "https://cn.gravatar.com/", target: "_blank" %>
+        </div>
+        <div>
+          <%= link_to "Logout", "/user/logout", remote: true, method: :post %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
 <div class="section">
   <div class="section-wrap">
     <div class="section-item">
@@ -27,18 +47,3 @@
     </div>
   </div>
 </div>
-
-<% if logged_in? %>
-<div class="section">
-  <div class="section-wrap warning">
-    <div class="section-item">
-      <div class="section-title">
-        Operations
-      </div>
-      <div class="section-content">
-        <%= link_to "Logout", "/user/logout", remote: true, method: :post %>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
