@@ -1,4 +1,5 @@
 <% if logged_in? %>
   <span><%= link_to "New", controller: "image", action: "upload" %></span>
+  <span>|</span>
   <span><%= link_to "User: #{current_user.name}", "/u/#{current_user.name}" %></span>
 <% end %>
