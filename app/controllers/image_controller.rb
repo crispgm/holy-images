@@ -1,11 +1,27 @@
 class ImageController < ApplicationController
   include UserHelper
+  include ImageHelper
 
   before_action :require_login, only: [:upload, :create, :like]
 
   def item
     @image = Image.find(params[:id])
     @likes = Like.where(image_id: @image.id)
+
+    begin
+      image_local_original = @image.img_file(:original).split("?").at(0)
+
+      exif = Exif::Data.new("./public#{image_local_original}")
+
+      @image.exif = {}
+      @image.exif[:model] = "#{exif.make} #{exif.model}"
+      @image.exif[:focal_length] = "#{exif.focal_length_in_35mm_film}mm"
+      @image.exif[:aperture] = extract_exif_value(exif.aperture_value)
+      @image.exif[:shutter_speed] = extract_exif_value(exif.shutter_speed_value)
+      @image.exif[:resolution] = "#{exif.pixel_x_dimension}x#{exif.pixel_y_dimension}"
+    rescue
+      @image.exif = nil
+    end
   end
 
   def explore
