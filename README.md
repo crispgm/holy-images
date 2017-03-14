@@ -11,7 +11,9 @@ HolyImage is an image-based social network.
 
 ## Setup
 
-1. Install dependencies (ImageMagick)
+1. Install dependencies
+	* ImageMagick
+	* libexif
 2. `bundle install`
 3. Setup `secrets.yml`
 4. Create DB
