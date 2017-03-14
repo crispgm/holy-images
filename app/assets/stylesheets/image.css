@@ -27,3 +27,19 @@ img.gravatar {
   font-weight: bold;
   -webkit-text-stroke: 1px white;
 }
+@media (max-width: 42rem) {
+  .section-explore {
+    display: block;
+  }
+  .section-square {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+  .section-square img {
+    max-width: 100%;
+  }
+  .section-overlay {
+    display: none;
+  }
+}
