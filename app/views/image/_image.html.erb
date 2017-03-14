@@ -24,14 +24,14 @@
           <%= link_to(image_tag(image.img_url(style)), "/image/#{image.id}") %>
         <% end %>
       </div>
+      <% unless defined?(nolink) && nolink == true %>
       <div class="section-action">
-        <% unless defined?(nolink) && nolink == true %>
-          <%= link_to "Like", "/image/like/#{image.id}", remote: true, method: :post %>
-          <% if image.likes.count > 0 %>
-            ❤️ <%= image.likes.count %>
-          <% end %>
+        <%= link_to "Like", "/image/like/#{image.id}", remote: true, method: :post %>
+        <% if image.likes.count > 0 %>
+          ❤️ <%= image.likes.count %>
         <% end %>
       </div>
+      <% end %>
       <div class="section-footer">
         <div class="section-footer-icon">
           <%= image_tag(image.user.gravatar_url, :class => "gravatar") %>
@@ -43,3 +43,43 @@
     </div>
   </div>
 </div>
+
+<% if defined?(nolink) && nolink == true %>
+<div class="section" id="exif-data">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        EXIF
+      </div>
+      <div class="section-content">
+        <% unless image.exif.blank? %>
+        <table>
+          <tr>
+            <td>Model</td>
+            <td><%= image.exif[:model] %></td>
+          </tr>
+          <tr>
+            <td>Focal Length</td>
+            <td><%= image.exif[:focal_length] %></td>
+          </tr>
+          <tr>
+            <td>Aperture</td>
+            <td><%= image.exif[:aperture] %></td>
+          </tr>
+          <tr>
+            <td>Shutter Speed</td>
+            <td><%= image.exif[:shutter_speed] %></td>
+          </tr>
+          <tr>
+            <td>Size</td>
+            <td><%= image.exif[:resolution] %></td>
+          </tr>
+        </table>
+        <% else %>
+        Not available.
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
