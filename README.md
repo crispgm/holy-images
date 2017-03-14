@@ -6,6 +6,7 @@ HolyImage is an image-based social network.
 
 * Image Upload/Like
 * Image Explore
+* EXIF Data
 * User System
 * Gravatar
 

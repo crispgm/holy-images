@@ -1,4 +1,6 @@
 class Image < ApplicationRecord
+  attr_accessor :exif
+
   belongs_to :user
   has_many :likes, -> { where status: Like::STATUS_LIKE }
 
