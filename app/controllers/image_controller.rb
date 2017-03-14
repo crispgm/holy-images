@@ -16,8 +16,10 @@ class ImageController < ApplicationController
       @image.exif = {}
       @image.exif[:model] = "#{exif.make} #{exif.model}"
       @image.exif[:focal_length] = "#{exif.focal_length_in_35mm_film}mm"
-      @image.exif[:aperture] = extract_exif_value(exif.aperture_value)
-      @image.exif[:shutter_speed] = extract_exif_value(exif.shutter_speed_value)
+      @image.exif[:aperture] = exif.fnumber
+      @image.exif[:shutter_speed] = exif.exposure_time
+      @image.exif[:ISO] = exif.iso_speed_ratings
+      @image.exif[:software] = exif.software
       @image.exif[:resolution] = "#{exif.pixel_x_dimension}x#{exif.pixel_y_dimension}"
     rescue
       @image.exif = nil
