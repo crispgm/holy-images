@@ -12,5 +12,6 @@ module Holyimage
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.time_zone = "Beijing"
+    config.runtime_path = ENV["APP_PREFIX"] || "."
   end
 end

@@ -54,34 +54,48 @@
       <div class="section-content">
         <% unless image.exif.blank? %>
         <table>
+          <% unless image.exif[:model].blank? %>
           <tr>
             <td>Model</td>
             <td><%= image.exif[:model] %></td>
           </tr>
+          <% end %>
+          <% unless image.exif[:focal_length].blank? %>
           <tr>
             <td>Focal Length</td>
-            <td><%= image.exif[:focal_length] %></td>
+            <td><%= image.exif[:focal_length] %>mm</td>
           </tr>
+          <% end %>
+          <% unless image.exif[:aperture].blank? %>
           <tr>
             <td>Aperture</td>
             <td><%= image.exif[:aperture] %></td>
           </tr>
+          <% end %>
+          <% unless image.exif[:shutter_speed].blank? %>
           <tr>
             <td>Shutter Speed</td>
             <td><%= image.exif[:shutter_speed] %></td>
           </tr>
+          <% end %>
+          <% unless image.exif[:ISO].blank? %>
           <tr>
             <td>ISO</td>
             <td><%= image.exif[:ISO] %></td>
           </tr>
+          <% end %>
+          <% unless image.exif[:software].blank? %>
           <tr>
             <td>Software</td>
             <td><%= image.exif[:software] %></td>
           </tr>
+          <% end %>
+          <% unless image.exif[:resolution].blank? %>
           <tr>
             <td>Size</td>
             <td><%= image.exif[:resolution] %></td>
           </tr>
+          <% end %>
         </table>
         <% else %>
         Not available.
