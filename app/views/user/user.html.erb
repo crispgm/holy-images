@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<% if logged_in? %>
+<% if logged_in? && current_user.name == params[:name] %>
 <div class="section">
   <div class="section-wrap info">
     <div class="section-item">
