@@ -12,8 +12,21 @@
 </div>
 
 <% if logged_in? && current_user.name == params[:name] %>
-<div class="section">
+<div class="section" id="invitation">
   <div class="section-wrap info">
+    <div class="section-item">
+      <div class="section-title">
+        Invitation
+      </div>
+      <div class="section-content user-invite">
+        <input type="text" value="<%= request.url %>/invitation" readonly>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="operations">
+  <div class="section-wrap">
     <div class="section-item">
       <div class="section-title">
         Operations

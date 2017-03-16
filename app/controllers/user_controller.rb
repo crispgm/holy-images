@@ -5,6 +5,10 @@ class UserController < ApplicationController
     render "user/sign-in"
   end
 
+  def invite
+    render "user/invite"
+  end
+
   def create
     params[:user][:password] = encrypt_password(params[:user][:password])
     params[:user][:password_confirmation] = encrypt_password(params[:user][:password_confirmation])
