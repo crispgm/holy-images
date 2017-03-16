@@ -5,11 +5,22 @@ class UserController < ApplicationController
     render "user/sign-in"
   end
 
+  def invite
+    render "user/invite"
+  end
+
   def create
     params[:user][:password] = encrypt_password(params[:user][:password])
     params[:user][:password_confirmation] = encrypt_password(params[:user][:password_confirmation])
 
+    unless params[:user].has_key?(:invited_by)
+      invited_by = 0
+    else
+      invited_by = User.find_by(name: params[:user][:invited_by]).id
+    end
+
     @user = User.new(params.require(:user).permit(:email, :name, :password, :password_confirmation))
+    @user.invited_by = invited_by
     if @user.save
       log_in(@user)
       flash[:info] = "Register successfully"
@@ -23,6 +34,7 @@ class UserController < ApplicationController
   def info
     @user = User.find_by(name: params[:name])
     @images = Image.where(user: @user.id).limit(10)
+    @invite_user = @user.invited_by == 0 ? nil : User.find(@user.invited_by)
     render "user/user"
   end
 

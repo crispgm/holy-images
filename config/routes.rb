@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post "user/login" => "user#login"
   post "user/logout" => "user#logout"
   get "u/:name" => "user#info"
+  get "u/:name/invitation" => "user#invite"
 
   root "index#index"
 end
