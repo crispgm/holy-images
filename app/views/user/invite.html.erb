@@ -29,7 +29,7 @@
         <%= f.password_field :password_confirmation %>
       </div>
       <div class="section-content">
-        <%= f.hidden_field :refferer, value: params[:name] %>
+        <%= f.hidden_field :invited_by, value: params[:name] %>
         <%= f.submit "Register" %>
       </div>
       <% end %>

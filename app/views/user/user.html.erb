@@ -2,7 +2,11 @@
   <div class="section-wrap">
     <div class="section-item">
       <div class="section-time">
+        <% if @invite_user.blank? %>
         Joined at <%= @user.created_at.strftime("%Y-%m-%d") %>
+        <% else %>
+        Invited by <%= @invite_user.name %> and joined at <%= @user.created_at.strftime("%Y-%m-%d") %>
+        <% end %>
       </div>
       <div class="section-title">
         <%= @user.name %>
