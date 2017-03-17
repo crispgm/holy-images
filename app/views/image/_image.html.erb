@@ -24,14 +24,12 @@
           <%= link_to(image_tag(image.img_url(style)), "/image/#{image.id}") %>
         <% end %>
       </div>
-      <% unless defined?(nolink) && nolink == true %>
       <div class="section-action">
         <%= link_to "Like", "/image/like/#{image.id}", remote: true, method: :post %>
         <% if image.likes.count > 0 %>
           ❤️ <%= image.likes.count %>
         <% end %>
       </div>
-      <% end %>
       <div class="section-footer">
         <div class="section-footer-icon">
           <%= image_tag(image.user.gravatar_url, :class => "gravatar") %>
