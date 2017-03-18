@@ -1,11 +1,3 @@
-<div class="section">
-  <div class="section-wrap info">
-    <div class="section-title">
-      <%= link_to "Back", controller: "index", action: "index" %>
-    </div>
-  </div>
-</div>
-
 <%= render partial: "image/image", object: @image, locals: {nolink: true, style: :original} %>
 
 <div class="section">
@@ -22,6 +14,14 @@
         <%= like.user.name %>
       </div>
       <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-wrap info">
+    <div class="section-title">
+      <%= link_to "Back", controller: "index", action: "index" %>
     </div>
   </div>
 </div>

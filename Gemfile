@@ -56,3 +56,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'gravtastic'
 gem 'paperclip'
 gem 'exif'
+gem 'font-awesome-sass', '~> 4.7.0'

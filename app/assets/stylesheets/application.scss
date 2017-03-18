@@ -7,6 +7,10 @@
  * Theme of Crisp Wiki
  * Copyright(c) David Zhang, 2016
  */
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 * {
   box-sizing: border-box;
 }
@@ -14,7 +18,7 @@ html {
   width: 100%;
   font-size: 16px;
 }
-@media (max-width: 42rem) {
+@media (max-width: 36rem) {
   html {
     font-size: 12px;
   }
@@ -77,6 +81,12 @@ a:hover {
   margin-right: auto;
   text-align: left;
 }
+@media (max-width: 36rem) {
+  .menu-wrapper {
+    padding-left: .8rem;
+    padding-right: .8rem;
+  }
+}
 .menu a {
   color: #333;
   text-decoration: none;
@@ -112,6 +122,9 @@ a:hover {
 }
 .section {
   text-align: left;
+  margin-top: 1rem;
+}
+.section-image {
   margin-top: 3rem;
 }
 .section-wrap {
@@ -120,7 +133,7 @@ a:hover {
   box-shadow: 0 .1rem .4rem 0 #ddd;
   padding: 1rem;
 }
-@media (max-width: 42rem) {
+@media (max-width: 36rem) {
   .section {
     margin-top: .4rem;
   }

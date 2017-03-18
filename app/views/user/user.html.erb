@@ -28,24 +28,6 @@
     </div>
   </div>
 </div>
-
-<div class="section" id="operations">
-  <div class="section-wrap">
-    <div class="section-item">
-      <div class="section-title">
-        Operations
-      </div>
-      <div class="section-content">
-        <div>
-          <%= link_to "Update Gravatar", "https://cn.gravatar.com/", target: "_blank" %>
-        </div>
-        <div>
-          <%= link_to "Logout", "/user/logout", remote: true, method: :post %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <% end %>
 
 <div class="section">
@@ -64,3 +46,23 @@
     </div>
   </div>
 </div>
+
+<% if logged_in? && current_user.name == params[:name] %>
+<div class="section" id="operations">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        Operations
+      </div>
+      <div class="section-content">
+        <div>
+          <%= link_to "Update Gravatar", "https://cn.gravatar.com/", target: "_blank" %>
+        </div>
+        <div>
+          <%= link_to "Logout", "/user/logout", remote: true, method: :post %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

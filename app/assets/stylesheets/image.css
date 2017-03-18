@@ -14,20 +14,20 @@ img.gravatar {
   padding-top: .2rem;
 }
 .section-square img {
-  width: 19.6rem;
-  height: 19.6rem;
+  width: 11rem;
+  height: 11rem;
 }
 .section-overlay {
-  width: 20rem;
-  height: 20rem;
-  line-height: 20rem;
+  width: 11rem;
+  height: 11rem;
+  line-height: 11rem;
   position: absolute;
   text-align: center;
   font-size: 2.4rem;
   font-weight: bold;
   -webkit-text-stroke: 1px white;
 }
-@media (max-width: 42rem) {
+@media (max-width: 36rem) {
   .section-explore {
     display: block;
   }
@@ -42,4 +42,8 @@ img.gravatar {
   .section-overlay {
     display: none;
   }
+}
+.site-menu .fa {
+  margin-left: .4rem;
+  font-size: 1.5rem;
 }

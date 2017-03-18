@@ -1,7 +1,7 @@
 <% unless defined?(style) %>
   <% style = :thumbnail %>
 <% end %>
-<div class="section">
+<div class="section section-image">
   <div class="section-wrap hover-effect">
     <div class="section-item">
       <div class="section-time">
@@ -25,9 +25,9 @@
         <% end %>
       </div>
       <div class="section-action">
-        <%= link_to "Like", "/image/like/#{image.id}", remote: true, method: :post %>
+        <%= link_to icon("heart-o"), "/image/like/#{image.id}", remote: true, method: :post %>
         <% if image.likes.count > 0 %>
-          ❤️ <%= image.likes.count %>
+          <%= image.likes.count %>
         <% end %>
       </div>
       <div class="section-footer">
