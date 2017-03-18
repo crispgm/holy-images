@@ -53,7 +53,7 @@ class ImageController < ApplicationController
     image_id = params[:id]
     user_id = current_user.id
     # check existence
-    @like = Like.find_by(image_id: image_id, user_id: user_id)
+    @like = Like.unscoped.find_by(image_id: image_id, user_id: user_id, status: [Like::STATUS_LIKE, Like::STATUS_UNLIKE])
 
     unless @like == nil
       if @like.status == Like::STATUS_LIKE
