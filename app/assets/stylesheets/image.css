@@ -28,7 +28,7 @@ img.gravatar {
   -webkit-text-stroke: 1px white;
   z-index: 999;
 }
-.section-blur img{
+/*.section-blur img{
   -webkit-filter: blur(5px);
   filter: blur(5px);
 }
@@ -38,7 +38,7 @@ img.gravatar {
 }
 .section-blur:hover .section-overlay {
   display: none;
-}
+}*/
 @media (max-width: 36rem) {
   .section-explore {
     display: block;
