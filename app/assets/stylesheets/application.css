@@ -62,32 +62,23 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.container {
-  max-width: 42rem;
+.menu {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: white;
+  font-size: 1.4rem;
+  line-height: 1.0;
+  text-align: center;
+  box-shadow: 0 .1rem .4rem 0 #ddd;
+}
+.menu-wrapper {
+  max-width: 40rem;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  margin-bottom: 3rem;
-}
-@media (max-width: 42rem) {
-  .container {
-    padding-left: .4rem;
-    padding-right: .4rem;
-  }
-}
-.menu {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  border-radius: .1rem;
-  background-color: #333;
-  display: flex;
-  font-size: 1.4rem;
-  line-height: 1.0;
 }
 .menu a {
-  color: white;
+  color: #333;
   text-decoration: none;
 }
 .menu a:hover {
@@ -95,20 +86,33 @@ a:hover {
 }
 .site-name {
   padding-right: .4rem;
-  border-right: .1rem solid #fff;
   margin-right: .4rem;
 }
 .site-menu {
+  float: right;
   font-size: 1.2rem;
-  padding-top: .1rem;
   color: white;
 }
 .site-menu a:hover {
   text-decoration: underline;
 }
+.container {
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 36rem) {
+  .container {
+    padding-left: .4rem;
+    padding-right: .4rem;
+  }
+}
 .section {
   text-align: left;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 .section-wrap {
   margin-top: 1rem;

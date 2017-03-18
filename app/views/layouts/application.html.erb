@@ -12,17 +12,18 @@
   </head>
 
   <body>
-    <div class="container">
-      <header class="menu">
-        <div class="site-name">
-          <%= link_to "HolyImage", controller: "index", action: "index" %>
-        </div>
+    <header class="menu">
+      <div class="menu-wrapper">
         <div class="site-menu">
-          <span><%= link_to "Home", controller: "index", action: "index" %></span>
           <span><%= link_to "Explore", controller: "image", action: "explore" %></span>
           <%= render "layouts/user" %>
         </div>
-      </header>
+        <div class="site-name">
+          <%= link_to "HolyImage", controller: "index", action: "index" %>
+        </div>
+      </div>
+    </header>
+    <div class="container">
       <%= yield %>
 
       <footer>
