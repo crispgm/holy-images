@@ -25,7 +25,11 @@
         <% end %>
       </div>
       <div class="section-action">
-        <%= link_to icon("heart-o"), "/image/like/#{image.id}", remote: true, method: :post %>
+        <% if image.liked %>
+          <%= link_to icon("heart"), "/image/like/#{image.id}", remote: true, method: :post %>
+        <% else %>
+          <%= link_to icon("heart-o"), "/image/like/#{image.id}", remote: true, method: :post %>
+        <% end %>
         <% if image.likes.count > 0 %>
           <%= image.likes.count %>
         <% end %>

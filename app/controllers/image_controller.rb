@@ -8,6 +8,13 @@ class ImageController < ApplicationController
     @image = Image.find(params[:id])
     @likes = Like.where(image_id: @image.id)
 
+    @image.liked = false
+    if logged_in?
+      @likes.each do |like|
+        @image.liked = true if like.user_id == current_user.id
+      end
+    end
+
     begin
       image_local_original = @image.img_file(:original).split("?").at(0)
       image_prefix = Rails.application.config.runtime_path
