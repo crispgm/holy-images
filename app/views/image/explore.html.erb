@@ -13,7 +13,7 @@
     <div class="section-explore">
       <% @explore[:weekly_top].each do |image| %>
       <a href="/image/<%= image.id %>">
-      <div class="section-square">
+      <div class="section-square section-blur">
         <div class="section-overlay">
           <%= image.likes.count %>
         </div>

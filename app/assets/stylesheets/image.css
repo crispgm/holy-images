@@ -26,6 +26,18 @@ img.gravatar {
   font-size: 2.4rem;
   font-weight: bold;
   -webkit-text-stroke: 1px white;
+  z-index: 999;
+}
+.section-blur img{
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+.section-blur:hover img{
+  -webkit-filter: none;
+  filter: none;
+}
+.section-blur:hover .section-overlay {
+  display: none;
 }
 @media (max-width: 36rem) {
   .section-explore {
@@ -41,6 +53,8 @@ img.gravatar {
   }
   .section-overlay {
     display: none;
+  }
+  .section-blur {
   }
 }
 .site-menu .fa {
