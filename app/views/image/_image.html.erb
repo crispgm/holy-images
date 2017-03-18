@@ -47,36 +47,36 @@
 </div>
 
 <% if defined?(nolink) && nolink == true %>
+<% unless image.exif.blank? %>
 <div class="section" id="exif-data">
   <div class="section-wrap">
     <div class="section-item">
       <div class="section-title">
-        EXIF
+        EXIF 信息
       </div>
       <div class="section-content">
-        <% unless image.exif.blank? %>
         <table>
           <% unless image.exif[:model].blank? %>
           <tr>
-            <td>Model</td>
+            <td>型号</td>
             <td><%= image.exif[:model] %></td>
           </tr>
           <% end %>
           <% unless image.exif[:focal_length].blank? %>
           <tr>
-            <td>Focal Length</td>
+            <td>焦距</td>
             <td><%= image.exif[:focal_length] %>mm</td>
           </tr>
           <% end %>
           <% unless image.exif[:aperture].blank? %>
           <tr>
-            <td>Aperture</td>
+            <td>光圈</td>
             <td><%= image.exif[:aperture] %></td>
           </tr>
           <% end %>
           <% unless image.exif[:shutter_speed].blank? %>
           <tr>
-            <td>Shutter Speed</td>
+            <td>快门</td>
             <td><%= image.exif[:shutter_speed] %></td>
           </tr>
           <% end %>
@@ -88,22 +88,20 @@
           <% end %>
           <% unless image.exif[:software].blank? %>
           <tr>
-            <td>Software</td>
+            <td>软件</td>
             <td><%= image.exif[:software] %></td>
           </tr>
           <% end %>
           <% unless image.exif[:resolution].blank? %>
           <tr>
-            <td>Resolution</td>
+            <td>解析度</td>
             <td><%= image.exif[:resolution] %></td>
           </tr>
           <% end %>
         </table>
-        <% else %>
-        Not available.
-        <% end %>
       </div>
     </div>
   </div>
 </div>
+<% end %>
 <% end %>

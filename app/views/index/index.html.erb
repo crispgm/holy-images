@@ -12,8 +12,8 @@
   <div class="section">
     <div class="section-wrap hint">
       <div id="sign-up" class="section-title">
-        <%= link_to "Sign Up", "/user/new" %> /
-        <%= link_to "Sign In", "/user/sign-in" %>
+        <%= link_to "注册", "/user/new" %> /
+        <%= link_to "登录", "/user/sign-in" %>
       </div>
     </div>
   </div>
@@ -27,17 +27,17 @@
   <div class="section-wrap info">
     <div class="section-item">
       <div class="section-title">
-        Total Images: <%= @page[:total] %>,
-        Current Page: <%= @page[:cur_page] %>,
+        总共: <%= @page[:total] %>,
+        当前页: <%= @page[:cur_page] %>,
         <% if @page[:cur_page] > 1 %>
-          <%= link_to "Previous", controller: "index", action: "index", p: @page[:cur_page] - 1 %>
+          <%= link_to "上一页", controller: "index", action: "index", p: @page[:cur_page] - 1 %>
         <% else %>
-           Previous
+           上一页
         <% end %>|
         <% if @page[:cur_page] < @page[:total_page] %>
-          <%= link_to "Next", controller: "index", action: "index", p: @page[:cur_page] + 1 %>
+          <%= link_to "下一页", controller: "index", action: "index", p: @page[:cur_page] + 1 %>
         <% else %>
-           Next
+           下一页
         <% end %>
       </div>
     </div>

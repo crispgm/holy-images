@@ -1,9 +1,10 @@
 <%= render partial: "image/image", object: @image, locals: {nolink: true, style: :original} %>
 
+<% if @likes.size > 0 %>
 <div class="section">
   <div class="section-wrap">
     <div class="section-title">
-      Likes
+      Like
     </div>
     <div class="section-content">
       <% @likes.each do |like| %>
@@ -17,11 +18,12 @@
     </div>
   </div>
 </div>
+<% end %>
 
 <div class="section">
   <div class="section-wrap info">
     <div class="section-title">
-      <%= link_to "Back", controller: "index", action: "index" %>
+      <%= link_to "退回", controller: "index", action: "index" %>
     </div>
   </div>
 </div>

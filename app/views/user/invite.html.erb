@@ -2,7 +2,7 @@
   <div class="section-wrap info invite-title">
     <div class="section-item">
       <div class="section-title">
-        <%= params[:name] %> is inviting you to register HolyImage...
+        <%= params[:name] %> 正在邀请您加入 HolyImage...
       </div>
     </div>
   </div>
@@ -13,7 +13,7 @@
     <div class="section-item">
       <%= form_for :user, method: :post, url: '/user/create' do |f| %>
       <div class="section-content">
-        <%= f.label "Name" %>
+        <%= f.label "用户名" %>
         <%= f.text_field :name %>
       </div>
       <div class="section-content">
@@ -21,16 +21,16 @@
         <%= f.text_field :email %>
       </div>
       <div class="section-content">
-        <%= f.label "Password" %>
+        <%= f.label "密码" %>
         <%= f.password_field :password %>
       </div>
       <div class="section-content">
-        <%= f.label "Password Confirmation" %>
+        <%= f.label "密码确认" %>
         <%= f.password_field :password_confirmation %>
       </div>
       <div class="section-content">
         <%= f.hidden_field :invited_by, value: params[:name] %>
-        <%= f.submit "Register" %>
+        <%= f.submit "注册" %>
       </div>
       <% end %>
     </div>

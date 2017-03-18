@@ -3,9 +3,9 @@
     <div class="section-item">
       <div class="section-time">
         <% if @invite_user.blank? %>
-        Joined at <%= @user.created_at.strftime("%Y-%m-%d") %>
+        注册于 <%= @user.created_at.strftime("%Y-%m-%d") %>
         <% else %>
-        Invited by <%= @invite_user.name %> and joined at <%= @user.created_at.strftime("%Y-%m-%d") %>
+        由 <%= @invite_user.name %> 邀请注册于 <%= @user.created_at.strftime("%Y-%m-%d") %>
         <% end %>
       </div>
       <div class="section-title">
@@ -20,7 +20,7 @@
   <div class="section-wrap info">
     <div class="section-item">
       <div class="section-title">
-        Invitation
+        邀请注册
       </div>
       <div class="section-content user-invite">
         <input type="text" value="<%= request.url %>/invitation" readonly>
@@ -34,7 +34,7 @@
   <div class="section-wrap">
     <div class="section-item">
       <div class="section-title">
-        Image uploaded
+        图片集
       </div>
       <div class="section-explore">
       <% @images.each do |image| %>
@@ -49,17 +49,17 @@
 
 <% if logged_in? && current_user.name == params[:name] %>
 <div class="section" id="operations">
-  <div class="section-wrap">
+  <div class="section-wrap warning">
     <div class="section-item">
       <div class="section-title">
-        Operations
+        用户操作
       </div>
       <div class="section-content">
         <div>
-          <%= link_to "Update Gravatar", "https://cn.gravatar.com/", target: "_blank" %>
+          <%= link_to "更换头像", "https://cn.gravatar.com/", target: "_blank" %>
         </div>
         <div>
-          <%= link_to "Logout", "/user/logout", remote: true, method: :post %>
+          <%= link_to "登出", "/user/logout", remote: true, method: :post %>
         </div>
       </div>
     </div>

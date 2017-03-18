@@ -48,7 +48,7 @@ class ImageController < ApplicationController
     @image.user = User.find(current_user.id)
 
     if @image.save
-      flash[:info] = "Upload successfully."
+      flash[:info] = "上传成功。"
     else
       flash[:warning] = @image.errors.messages
     end
@@ -92,7 +92,7 @@ class ImageController < ApplicationController
   private
   def require_login
     unless logged_in?
-      flash[:warning] = "Please register an account."
+      flash[:warning] = "请先登录用户。"
       redirect_to root_url
     end
   end
