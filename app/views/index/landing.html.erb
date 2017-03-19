@@ -1,0 +1,26 @@
+<%= render partial: "index/flash" %>
+
+<a href="/user/new">
+  <div class="section">
+    <div class="section-wrap text-center">
+      <div id="sign-up" class="section-title">
+        <b>记录生活，分享喜悦，定格美好</b>
+      </div>
+      <div class="section-content">
+        <b>现在加入 HolyImage"</b>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section">
+    <div class="section-wrap">
+      <div class="section-explore">
+        <% @images.each do |image| %>
+        <div class="section-square section-blur">
+          <%= image_tag(image.img_url(:thumbnail)) %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</a>

@@ -2,7 +2,7 @@ class ImageController < ApplicationController
   include UserHelper
   include ImageHelper
 
-  before_action :require_login, only: [:upload, :create, :like]
+  before_action :require_login
 
   def item
     @image = Image.find(params[:id])

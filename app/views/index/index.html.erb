@@ -1,12 +1,4 @@
-<% flash.each do |type, msg| %>
-<div class="section">
-  <div class="section-wrap <%= type %>">
-    <div id="flash-message" class="section-title">
-      <%= msg %>
-    </div>
-  </div>
-</div>
-<% end %>
+<%= render partial: "index/flash" %>
 
 <% unless logged_in? %>
   <div class="section">
