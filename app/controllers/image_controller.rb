@@ -107,6 +107,6 @@ class ImageController < ApplicationController
   end
 
   def weekly_top_list
-    Image.unscoped.joins(:likes).group("likes.image_id").order("count(likes.id) desc")
+    Image.unscoped.joins(:likes).group("likes.image_id").order("count(likes.id) desc").limit(30)
   end
 end
