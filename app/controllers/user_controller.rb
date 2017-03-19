@@ -24,6 +24,7 @@ class UserController < ApplicationController
     if @user.save
       log_in(@user)
       flash[:info] = "注册成功。"
+      UserMailer.welcome(@user, request.url).deliver_later
     else
       flash[:warning] = @user.errors.messages
     end
