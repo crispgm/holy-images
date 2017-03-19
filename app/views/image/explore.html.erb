@@ -15,7 +15,7 @@
       <a href="/image/<%= image.id %>">
       <div class="section-square section-blur">
         <div class="section-overlay">
-          <%= image.likes.count %>
+          <%= icon("heart") %><%= image.likes.count %>
         </div>
         <%= image_tag(image.img_url(:thumbnail)) %>
       </div>

@@ -2,7 +2,7 @@ class ImageController < ApplicationController
   include UserHelper
   include ImageHelper
 
-  before_action :require_login, only: [:upload, :create, :like]
+  before_action :require_login
 
   def item
     @image = Image.find(params[:id])
@@ -107,6 +107,6 @@ class ImageController < ApplicationController
   end
 
   def weekly_top_list
-    Image.unscoped.joins(:likes).group("likes.image_id").order("count(likes.id) desc")
+    Image.unscoped.joins(:likes).group("likes.image_id").order("count(likes.id) desc").limit(30)
   end
 end
