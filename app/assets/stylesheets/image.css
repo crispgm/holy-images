@@ -23,10 +23,17 @@ img.gravatar {
   line-height: 11rem;
   position: absolute;
   text-align: center;
-  font-size: 2.4rem;
+  color: white;
+  font-size: 1rem;
   font-weight: bold;
-  -webkit-text-stroke: 1px white;
   z-index: 999;
+  display: none;
+}
+.section-overlay .fa {
+  margin-right: .4rem;
+}
+.section-square:hover .section-overlay {
+  display: block;
 }
 /*.section-blur img{
   -webkit-filter: blur(5px);
