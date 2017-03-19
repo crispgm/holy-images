@@ -33,7 +33,7 @@ class UserController < ApplicationController
 
   def info
     @user = User.find_by(name: params[:name])
-    @images = Image.where(user: @user.id).limit(10)
+    @images = Image.where(user: @user.id).limit(9)
     @invite_user = @user.invited_by == 0 ? nil : User.find(@user.invited_by)
     render "user/user"
   end
