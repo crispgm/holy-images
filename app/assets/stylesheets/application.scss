@@ -83,6 +83,7 @@ a:hover {
 }
 @media (max-width: 36rem) {
   .menu-wrapper {
+    width: 100%;
     padding-left: .8rem;
     padding-right: .8rem;
   }
@@ -116,6 +117,9 @@ a:hover {
 }
 @media (max-width: 36rem) {
   .container {
+    width: 100%;
+    margin-top: .4rem;
+    margin-bottom: .4rem;
     padding-left: .4rem;
     padding-right: .4rem;
   }

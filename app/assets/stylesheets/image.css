@@ -48,15 +48,17 @@ img.gravatar {
 }*/
 @media (max-width: 36rem) {
   .section-explore {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
   }
-  .section-square {
-    width: 100%;
+  .section-explore a {
+    width: 33%;
     padding: 0;
     text-align: center;
   }
   .section-square img {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
   }
   .section-overlay {
     display: none;
