@@ -1,6 +1,6 @@
 <% if logged_in? %>
   <span><%= link_to icon("asterisk"), controller: "image", action: "explore" %></span>
-  <span><%= link_to icon("image"), controller: "image", action: "upload" %></span>
+  <span><%= link_to icon("plus"), controller: "image", action: "upload" %></span>
   <span><%= link_to icon("user-circle-o"), "/u/#{current_user.name}" %></span>
 <% else %>
   <span><%= link_to "登录", "/user/sign-in" %></span>
