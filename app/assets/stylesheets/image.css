@@ -66,10 +66,10 @@ img.gravatar {
   }
   .section-square {
     width: 33%;
+    height: 33%;
     text-align: center;
   }
   .section-square img {
-    width: 100%;
   }
   .section-overlay {
     display: none;
