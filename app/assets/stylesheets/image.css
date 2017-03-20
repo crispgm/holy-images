@@ -1,4 +1,17 @@
+.upload input {
+  margin-top: .4rem;
+}
 .upload input[type=text] {
+  width: 100%;
+  border-radius: 2px;
+  border: .1rem solid #aaa;
+  font-size: 1.5rem;
+}
+.upload input[type=submit] {
+  font-size: 1.2rem;
+}
+.upload input[type=file] {
+  border: .1rem solid #aaa;
   width: 100%;
 }
 img.gravatar {
@@ -51,14 +64,12 @@ img.gravatar {
     display: flex;
     flex-wrap: wrap;
   }
-  .section-explore a {
+  .section-square {
     width: 33%;
-    padding: 0;
     text-align: center;
   }
   .section-square img {
     width: 100%;
-    height: 100%;
   }
   .section-overlay {
     display: none;

@@ -12,14 +12,14 @@
   <div class="section-wrap">
     <div class="section-explore">
       <% @explore[:weekly_top].each do |image| %>
-      <a href="/image/<%= image.id %>">
       <div class="section-square section-blur">
-        <div class="section-overlay">
-          <%= icon("heart") %><%= image.likes.count %>
-        </div>
-        <%= image_tag(image.img_url(:thumbnail)) %>
+        <a href="/image/<%= image.id %>">
+          <div class="section-overlay">
+            <%= icon("heart") %><%= image.likes.count %>
+          </div>
+          <%= image_tag(image.img_url(:thumbnail)) %>
+        </a>
       </div>
-      </a>
       <% end %>
     </div>
   </div>
