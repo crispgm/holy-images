@@ -59,19 +59,26 @@ class ImageController < ApplicationController
   def like
     image_id = params[:id]
     user_id = current_user.id
+    result = {
+      :status => nil,
+      :cur_num => nil
+    }
     # check existence
     @like = Like.unscoped.find_by(image_id: image_id, user_id: user_id, status: [Like::STATUS_LIKE, Like::STATUS_UNLIKE])
 
     unless @like == nil
       if @like.status == Like::STATUS_LIKE
         @like.status = Like::STATUS_UNLIKE
+        result[:status] = Like::STATUS_UNLIKE
       else
         @like.status = Like::STATUS_LIKE
+        result[:status] = Like::STATUS_LIKE
       end
       respond_to do |format|
         if @like.save
+          result[:cur_num] = get_likes_num(image_id)
           format.json do
-            render json: @like
+            render json: result
           end
         else
           format.json do
@@ -81,9 +88,11 @@ class ImageController < ApplicationController
       end
     else
       new_like(image_id, user_id)
+      result[:status] = Like::STATUS_LIKE
+      result[:cur_num] = get_likes_num(image_id)
       respond_to do |format|
         format.json do
-          render json: @initial_like
+          render json: result
         end
       end
     end
@@ -97,6 +106,7 @@ class ImageController < ApplicationController
     end
   end
 
+  private
   def new_like(image_id, user_id)
     # add new
     @initial_like = Like.new
@@ -106,6 +116,12 @@ class ImageController < ApplicationController
     @initial_like.save
   end
 
+  private
+  def get_likes_num(image_id)
+    Like.unscoped.select("id").where(image_id: image_id, status: Like::STATUS_LIKE).count
+  end
+
+  private
   def weekly_top_list
     Image.unscoped.joins(:likes).group("likes.image_id").order("count(likes.id) desc").limit(30)
   end
