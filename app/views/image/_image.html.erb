@@ -7,7 +7,11 @@
       <div class="section-time">
         <%= image.created_at.strftime("%H:%M") %>
         <% unless image.created_at.today? %>
-          <%= image.created_at.strftime("%Y-%m-%d") %>
+          <% unless image.created_at.this_year? %>
+            <%= image.created_at.strftime("%Y-%m-%d") %>
+          <% else %>
+            <%= image.created_at.strftime("%m-%d") %>
+          <% end %>
         <% end %>
       </div>
       <div class="section-title">
