@@ -76,6 +76,9 @@ img.gravatar {
   .section-overlay {
     display: none;
   }
+  .section-square:hover .section-overlay {
+    display: none;
+  }
   .section-blur {
   }
 }
