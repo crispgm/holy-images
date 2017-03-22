@@ -30,9 +30,9 @@
       </div>
       <div class="section-action">
         <% if image.liked %>
-          <%= link_to icon("heart"), "/image/like/#{image.id}", remote: true, method: :post, :id => "image-like-#{image.id}" %>
+          <%= link_to icon("heart"), "/image/like/#{image.id}", remote: true, method: :post, :id => "image-like-#{image.id}", :class => "image-like" %>
         <% else %>
-          <%= link_to icon("heart-o"), "/image/like/#{image.id}", remote: true, method: :post, :id => "image-like-#{image.id}" %>
+          <%= link_to icon("heart-o"), "/image/like/#{image.id}", remote: true, method: :post, :id => "image-like-#{image.id}", :class => "image-like" %>
         <% end %>
         <% if image.likes.count > 0 %>
           <span class="like-count"><%= image.likes.count %></span>
