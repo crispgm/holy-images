@@ -59,10 +59,12 @@ class ImageController < ApplicationController
   def like
     image_id = params[:id]
     user_id = current_user.id
+
     result = {
       :status => nil,
       :cur_num => nil
     }
+    
     # check existence
     @like = Like.unscoped.find_by(image_id: image_id, user_id: user_id, status: [Like::STATUS_LIKE, Like::STATUS_UNLIKE])
 
@@ -74,26 +76,25 @@ class ImageController < ApplicationController
         @like.status = Like::STATUS_LIKE
         result[:status] = Like::STATUS_LIKE
       end
-      respond_to do |format|
-        if @like.save
-          result[:cur_num] = get_likes_num(image_id)
-          format.json do
-            render json: result
-          end
-        else
-          format.json do
-            render json: @like.errors
-          end
-        end
+      
+      if @like.save
+        result[:cur_num] = get_likes_num(image_id)
+      else
+        result[:status] = -1
       end
     else
-      new_like(image_id, user_id)
-      result[:status] = Like::STATUS_LIKE
-      result[:cur_num] = get_likes_num(image_id)
-      respond_to do |format|
-        format.json do
-          render json: result
-        end
+      if new_like(image_id, user_id)
+        result[:status] = Like::STATUS_LIKE
+        result[:cur_num] = get_likes_num(image_id)
+      else
+        result[:status] = -2
+      end
+    end
+
+    # render
+    respond_to do |format|
+      format.json do
+        render json: result
       end
     end
   end

@@ -15,4 +15,4 @@ $ ->
       else
         $("#image-like-#{image_id}").next().text(data.cur_num)
     else
-      alert "点赞出错了"
+      alert "点赞出错了！服务器说自己有病：#{data.status}"
