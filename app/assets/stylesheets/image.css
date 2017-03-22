@@ -65,11 +65,13 @@ img.gravatar {
     flex-wrap: wrap;
   }
   .section-square {
-    width: 33%;
-    height: 33%;
+    /*width: 33%;*/
+    /*height: 33%;*/
     text-align: center;
   }
   .section-square img {
+    width: 7.6rem;
+    height: 7rem;
   }
   .section-overlay {
     display: none;
