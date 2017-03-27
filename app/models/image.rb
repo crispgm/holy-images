@@ -9,6 +9,7 @@ class Image < ApplicationRecord
   has_attached_file :img_file, styles: { thumbnail: "640x640#" }
   validates_attachment :img_file,
     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] } if Rails.application.config.validates_paperclip_attachment
+  do_not_validate_attachment_file_type :img_file unless Rails.application.config.validates_paperclip_attachment
   validate :url_or_file_presence
 
   default_scope do
