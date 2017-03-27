@@ -13,7 +13,5 @@ module Holyimage
     # -- all .rb files in that directory are automatically loaded.
     config.time_zone = "Beijing"
     config.runtime_path = ENV["APP_PREFIX"] || "."
-    # to avoid special case on one of my machine, should be true in real production
-    config.validates_paperclip_attachment = false
   end
 end
