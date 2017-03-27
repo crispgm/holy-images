@@ -7,10 +7,8 @@ class Image < ApplicationRecord
 
   validates :title, length: {minimum: 2}, presence: true
   has_attached_file :img_file, styles: { thumbnail: "640x640#" }
-  # to avoid special case on one of my machine, should be true in real production
-  # validates_attachment :img_file,
-  #  content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
-  do_not_validate_attachment_file_type :img_file
+  validates_attachment :img_file,
+    content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
   validate :url_or_file_presence
 
   default_scope do
