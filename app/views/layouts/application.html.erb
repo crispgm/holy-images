@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HolyImage</title>
+    <title><%= t(:title) %></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/holy-image-48.png">
@@ -18,7 +18,7 @@
           <%= render "layouts/user" %>
         </div>
         <div class="site-name">
-          <%= link_to "HolyImage", controller: "index", action: "index" %>
+          <%= link_to t(:title_short), controller: "index", action: "index" %>
         </div>
       </div>
     </header>
@@ -26,7 +26,7 @@
       <%= yield %>
 
       <footer>
-        <a href="/">HolyImage</a> &copy; 2017</a>
+        <%= link_to t(:title_short), controller: "index", action: "index" %> &copy; 2017</a>
       </footer>
     </div>
   </body>

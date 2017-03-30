@@ -56,49 +56,49 @@
   <div class="section-wrap">
     <div class="section-item">
       <div class="section-title">
-        EXIF 信息
+        <%= t(:exif_title) %>
       </div>
       <div class="section-content">
         <table>
           <% unless image.exif[:model].blank? %>
           <tr>
-            <td>型号</td>
+            <td><%= t(:exif_model) %></td>
             <td><%= image.exif[:model] %></td>
           </tr>
           <% end %>
           <% unless image.exif[:focal_length].blank? %>
           <tr>
-            <td>焦距</td>
+            <td><%= t(:exif_focal) %></td>
             <td><%= image.exif[:focal_length] %>mm</td>
           </tr>
           <% end %>
           <% unless image.exif[:aperture].blank? %>
           <tr>
-            <td>光圈</td>
+            <td><%= t(:exif_aperture) %></td>
             <td><%= image.exif[:aperture] %></td>
           </tr>
           <% end %>
           <% unless image.exif[:shutter_speed].blank? %>
           <tr>
-            <td>快门</td>
+            <td><%= t(:exif_shutter) %></td>
             <td><%= image.exif[:shutter_speed] %></td>
           </tr>
           <% end %>
           <% unless image.exif[:ISO].blank? %>
           <tr>
-            <td>ISO</td>
+            <td><%= t(:exif_ISO) %></td>
             <td><%= image.exif[:ISO] %></td>
           </tr>
           <% end %>
           <% unless image.exif[:software].blank? %>
           <tr>
-            <td>软件</td>
+            <td><%= t(:exif_software) %></td>
             <td><%= image.exif[:software] %></td>
           </tr>
           <% end %>
           <% unless image.exif[:resolution].blank? %>
           <tr>
-            <td>解析度</td>
+            <td><%= t(:exif_resolution) %></td>
             <td><%= image.exif[:resolution] %></td>
           </tr>
           <% end %>

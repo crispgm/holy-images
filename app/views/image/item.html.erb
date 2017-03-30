@@ -4,7 +4,7 @@
 <div class="section">
   <div class="section-wrap">
     <div class="section-title">
-      Like
+      <%= t(:like) %>
     </div>
     <div class="section-content">
       <% @likes.each do |like| %>
@@ -23,7 +23,7 @@
 <div class="section">
   <div class="section-wrap info">
     <div class="section-title">
-      <%= link_to "退回", controller: "index", action: "index" %>
+      <%= link_to t(:return), controller: "index", action: "index" %>
     </div>
   </div>
 </div>

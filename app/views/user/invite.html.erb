@@ -2,7 +2,7 @@
   <div class="section-wrap info invite-title">
     <div class="section-item">
       <div class="section-title">
-        <%= params[:name] %> 正在邀请您加入 HolyImage...
+        <%= params[:name] %> <%= t(:invite_title) %>
       </div>
     </div>
   </div>
@@ -11,28 +11,7 @@
 <div class="section upload">
   <div class="section-wrap">
     <div class="section-item">
-      <%= form_for :user, method: :post, url: '/user/create' do |f| %>
-      <div class="section-content">
-        <%= f.label "用户名" %>
-        <%= f.text_field :name %>
-      </div>
-      <div class="section-content">
-        <%= f.label "Email" %>
-        <%= f.text_field :email %>
-      </div>
-      <div class="section-content">
-        <%= f.label "密码" %>
-        <%= f.password_field :password %>
-      </div>
-      <div class="section-content">
-        <%= f.label "密码确认" %>
-        <%= f.password_field :password_confirmation %>
-      </div>
-      <div class="section-content">
-        <%= f.hidden_field :invited_by, value: params[:name] %>
-        <%= f.submit "注册" %>
-      </div>
-      <% end %>
+      <%= render partial: "user/new_form" %>
     </div>
   </div>
 </div>

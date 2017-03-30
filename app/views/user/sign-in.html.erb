@@ -2,19 +2,19 @@
   <div class="section-wrap">
     <div class="section-item">
       <div id="sign-in" class="section-title">
-        登录
+        <%= t(:login) %>
       </div>
       <%= form_for :user, method: :post, url: '/user/login' do |f| %>
       <div class="section-content">
-        <%= f.label "Email" %>
+        <%= f.label t(:user_email) %>
         <%= f.text_field :email %>
       </div>
       <div class="section-content">
-        <%= f.label "密码" %>
+        <%= f.label t(:user_password) %>
         <%= f.password_field :password %>
       </div>
       <div class="section-content">
-        <%= f.submit "登录" %>
+        <%= f.submit t(:login) %>
       </div>
       <% end %>
     </div>

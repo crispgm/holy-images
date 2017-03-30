@@ -11,7 +11,14 @@ module Holyimage
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    # time zone
     config.time_zone = "Beijing"
+
+    # ImageMagick runtime
     config.runtime_path = ENV["APP_PREFIX"] || "."
+
+    # i18n
+    config.i18n.default_locale = "zh-CN"
   end
 end
