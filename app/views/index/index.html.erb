@@ -1,16 +1,5 @@
 <%= render partial: "index/flash" %>
 
-<% unless logged_in? %>
-  <div class="section">
-    <div class="section-wrap hint">
-      <div id="sign-up" class="section-title">
-        <%= link_to "注册", "/user/new" %> /
-        <%= link_to "登录", "/user/sign-in" %>
-      </div>
-    </div>
-  </div>
-<% end %>
-
 <% @images.each do |image| %>
   <%= render partial: "image/image", object: image %>
 <% end %>
@@ -19,17 +8,17 @@
   <div class="section-wrap info">
     <div class="section-item">
       <div class="section-title">
-        总共: <%= @page[:total] %>,
-        当前页: <%= @page[:cur_page] %>,
+        <%= t(:index_total) %>: <%= @page[:total] %>,
+        <%= t(:index_current) %>: <%= @page[:cur_page] %>,
         <% if @page[:cur_page] > 1 %>
-          <%= link_to "上一页", controller: "index", action: "index", p: @page[:cur_page] - 1 %>
+          <%= link_to t(:index_prev), controller: "index", action: "index", p: @page[:cur_page] - 1 %>
         <% else %>
-           上一页
+           <%= t(:index_prev) %>
         <% end %>|
         <% if @page[:cur_page] < @page[:total_page] %>
-          <%= link_to "下一页", controller: "index", action: "index", p: @page[:cur_page] + 1 %>
+          <%= link_to t(:index_next), controller: "index", action: "index", p: @page[:cur_page] + 1 %>
         <% else %>
-           下一页
+           <%= t(:index_next) %>
         <% end %>
       </div>
     </div>

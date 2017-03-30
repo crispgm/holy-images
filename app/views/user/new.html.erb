@@ -2,29 +2,9 @@
   <div class="section-wrap">
     <div class="section-item">
       <div class="section-title">
-        注册
+        <%= t(:register) %>
       </div>
-      <%= form_for :user, method: :post, url: '/user/create' do |f| %>
-      <div class="section-content">
-        <%= f.label "用户名" %>
-        <%= f.text_field :name %>
-      </div>
-      <div class="section-content">
-        <%= f.label "Email" %>
-        <%= f.text_field :email %>
-      </div>
-      <div class="section-content">
-        <%= f.label "密码" %>
-        <%= f.password_field :password %>
-      </div>
-      <div class="section-content">
-        <%= f.label "密码确认" %>
-        <%= f.password_field :password_confirmation %>
-      </div>
-      <div class="section-content">
-        <%= f.submit "注册" %>
-      </div>
-      <% end %>
+      <%= render partial: "user/new_form" %>
     </div>
   </div>
 </div>

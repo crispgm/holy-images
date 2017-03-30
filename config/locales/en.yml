@@ -1,23 +1,46 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  title: "Holy Image"
+  title_short: "HolyImage"
+  exif_title: "EXIF Info"
+  exif_model: "Model"
+  exif_focal: "Focal Length"
+  exif_aperture: "Aperture"
+  exif_shutter: "Shutter Speed"
+  exif_ISO: "ISO"
+  exif_software: "Software"
+  exif_resolution: "Resolution"
+  like: "Like"
+  return: "Return"
+  explore: "Explore"
+  register: "Register"
+  login: "Login"
+  logout: "Logout"
+  landing_title: "A place to share the hapiness of life and beauty of world"
+  landing_content: "Join HolyImage now"
+  upload_section_title: "Share new photo"
+  upload_specs_title: "Image Specifications"
+  upload_specs_contents: |
+    <li>At least 2 characters for title</li>
+    <li>Image upload and URL are both allowed</li>
+    <li>30MB limit of image size</li>
+    <li>Ensure the loading speed of external URLs</li>
+    <li>Keep the image quality and maintain community order</li>
+  upload_image_title: "Title"
+  upload_image_file: "Image Upload (Recommended)"
+  upload_image_url: "External URL (Optional)"
+  upload_image_submit: "Submit"
+  index_total: "Total"
+  index_current: "Current Page"
+  index_prev: "Previous"
+  index_next: "Next"
+  invite_title: "is inviting you to join HolyImage..."
+  invite_link_title: "Invite your friends"
+  user_name: "User Name"
+  user_email: "Email"
+  user_password: "Password"
+  user_password_confirmation: "Password Confirmation"
+  album: "Album"
+  user_operation: "User Opertions"
+  change_avatar: "Change Gravatar"
+  registered_at: "Registered at %{time}"
+  invited_to_register_at: "Invited by %{user} and registered at %{time}"

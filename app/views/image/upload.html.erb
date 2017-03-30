@@ -2,7 +2,7 @@
   <div class="section-wrap info">
     <div class="section-item">
       <div class="section-title">
-        分享新照片
+        <%= t(:upload_section_title) %>
       </div>
     </div>
   </div>
@@ -12,15 +12,11 @@
   <div class="section-wrap">
     <div class="section-item">
       <div class="section-title">
-        图片规格要求
+        <%= t(:upload_specs_title) %>
       </div>
       <div class="section-content">
         <ul>
-          <li>标题至少有2个字符</li>
-          <li>可以选择上传图片或者 URL 外链</li>
-          <li>上传图片最大不超过30 MB（通过 Nginx client_max_body_size 限制）</li>
-          <li>外链请自行保证可用和加载速度</li>
-          <li>尽自己所能提高照片质量，维护社区秩序</li>
+          <%= raw(t(:upload_specs_contents)) %>
         </ul>
       </div>
     </div>
@@ -32,19 +28,19 @@
     <div class="section-item">
       <%= form_for :image, method: :post, url: '/image/create', html: { multipart: true } do |f| %>
       <div class="section-content">
-        <%= f.label "标题" %>
+        <%= f.label t(:upload_image_title) %>
         <%= f.text_field :title %>
       </div>
       <div class="section-content">
-        <%= f.label "图片上传（推荐）" %>
+        <%= f.label t(:upload_image_file) %>
         <%= f.file_field :img_file %>
       </div>
       <div class="section-content">
-        <%= f.label raw("图片外链（可选）") %>
+        <%= f.label t(:upload_image_url) %>
         <%= f.text_field :url %>
       </div>
       <div class="section-content">
-        <%= f.submit "发布" %>
+        <%= f.submit t(:upload_image_submit) %>
       </div>
       <% end %>
     </div>

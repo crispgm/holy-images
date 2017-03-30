@@ -1,0 +1,22 @@
+      <%= form_for :user, method: :post, url: '/user/create' do |f| %>
+      <div class="section-content">
+        <%= f.label t(:user_name) %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="section-content">
+        <%= f.label t(:user_email) %>
+        <%= f.text_field :email %>
+      </div>
+      <div class="section-content">
+        <%= f.label t(:user_password) %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="section-content">
+        <%= f.label t(:user_password_confirmation) %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <div class="section-content">
+        <%= f.hidden_field :invited_by, value: params[:name] %>
+        <%= f.submit t(:register) %>
+      </div>
+      <% end %>
