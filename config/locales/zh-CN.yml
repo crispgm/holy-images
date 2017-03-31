@@ -40,7 +40,7 @@ zh-CN:
   user_password: "密码"
   user_password_confirmation: "密码确认"
   album: "图片集"
-  user_operation: "用户操作"
+  user_operations: "用户操作"
   change_avatar: "更换头像"
   registered_at: "注册于 %{time}"
   invited_to_register_at: "由 %{user} 邀请注册于 %{time}"

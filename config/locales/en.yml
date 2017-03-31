@@ -40,7 +40,7 @@ en:
   user_password: "Password"
   user_password_confirmation: "Password Confirmation"
   album: "Album"
-  user_operation: "User Opertions"
+  user_operations: "User Opertions"
   change_avatar: "Change Gravatar"
   registered_at: "Registered at %{time}"
   invited_to_register_at: "Invited by %{user} and registered at %{time}"

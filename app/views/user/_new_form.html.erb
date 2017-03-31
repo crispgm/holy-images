@@ -17,6 +17,7 @@
       </div>
       <div class="section-content">
         <%= f.hidden_field :invited_by, value: params[:name] %>
+        <%= f.hidden_field :locale, value: I18n.locale %>
         <%= f.submit t(:register) %>
       </div>
       <% end %>

@@ -13,13 +13,13 @@ class UserController < ApplicationController
     params[:user][:password] = encrypt_password(params[:user][:password])
     params[:user][:password_confirmation] = encrypt_password(params[:user][:password_confirmation])
 
-    unless params[:user].has_key?(:invited_by)
+    if params[:user][:invited_by].blank?
       invited_by = 0
     else
       invited_by = User.find_by(name: params[:user][:invited_by]).id
     end
 
-    @user = User.new(params.require(:user).permit(:email, :name, :password, :password_confirmation))
+    @user = User.new(params.require(:user).permit(:email, :name, :password, :password_confirmation, :locale))
     @user.invited_by = invited_by
     if @user.save
       log_in(@user)
