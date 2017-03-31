@@ -44,3 +44,6 @@ en:
   change_avatar: "Change Gravatar"
   registered_at: "Registered at %{time}"
   invited_to_register_at: "Invited by %{user} and registered at %{time}"
+  register_success: "Register successfully."
+  login_failure: "Login failed."
+  login_success: "Login successfully."

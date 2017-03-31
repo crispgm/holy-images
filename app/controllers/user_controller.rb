@@ -23,7 +23,7 @@ class UserController < ApplicationController
     @user.invited_by = invited_by
     if @user.save
       log_in(@user)
-      flash[:info] = "注册成功。"
+      flash[:info] = I18n.t("register_success")
     else
       flash[:warning] = @user.errors.messages
     end
@@ -45,10 +45,10 @@ class UserController < ApplicationController
     @user = User.find_by(email: email, password: password)
 
     if @user.blank?
-      flash[:warning] = "登录失败。"
+      flash[:warning] = I18n.t("login_failure")
     else
       log_in(@user)
-      flash[:info] = "登录成功。"
+      flash[:info] = I18n.t("login_success")
     end
 
     redirect_to root_url

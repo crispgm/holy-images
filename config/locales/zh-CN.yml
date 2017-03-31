@@ -44,3 +44,6 @@ zh-CN:
   change_avatar: "更换头像"
   registered_at: "注册于 %{time}"
   invited_to_register_at: "由 %{user} 邀请注册于 %{time}"
+  register_success: "注册成功。"
+  login_failure: "登录失败。"
+  login_success: "登录成功。"
