@@ -20,5 +20,7 @@ module Holyimage
 
     # i18n
     config.i18n.default_locale = "zh-CN"
+    config.i18n.fallbacks = true
+    config.i18n.fallbacks = [:en]
   end
 end
