@@ -54,7 +54,11 @@
       <div class="section-title">
         <%= t(:user_operations) %>
       </div>
-      <div class="section-content">
+      <div class="section-content" id="user-operations">
+        <div>
+          <%= link_to "中文", "/zh-CN/user/locale", remote: true, method: :post %>
+          <%= link_to "English", "/en/user/locale", remote: true, method: :post %>
+        </div>
         <div>
           <%= link_to t(:change_avatar), "https://cn.gravatar.com/", target: "_blank" %>
         </div>

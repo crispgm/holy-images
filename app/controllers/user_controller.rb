@@ -58,6 +58,12 @@ class UserController < ApplicationController
     log_off(current_user)
   end
 
+  def locale
+    I18n.locale = params[:locale] || I18n.default_locale
+    current_user.locale = I18n.locale
+    current_user.save
+  end
+
   private
   def valid_password?(raw_password)
     raw_password.length < 6 || raw_password.length > 20 ? false : true  

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
     get "user/new" => "user#new"
     get "user/sign-in" => "user#sign_in"
+    post "user/locale" => "user#locale"
     post "user/create" => "user#create"
     post "user/login" => "user#login"
     post "user/logout" => "user#logout"
