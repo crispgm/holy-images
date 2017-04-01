@@ -1,0 +1,24 @@
+<div class="section">
+  <div class="section-wrap info">
+    <div class="section-item">
+      <div class="section-title">
+        <%= link_to t("mail.featured.title"), explore_url %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% @featured.each do |image| %>
+<div class="section section-image" id="image-<%= image.id %>">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        <%= link_to image.title, controller: "image", action: "item", id: image.id %>
+      </div>
+      <div class="section-content">
+        <%= link_to(image_tag(image.img_url(:thumbnail), width: 520, height: 520), controller: "image", action: "item", id: image.id) %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

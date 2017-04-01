@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fbfbfb;
+  word-wrap: break-word;
+  text-align: center;
+  height: 100%;
+}
+body ::selection {
+  background-color: #333;
+  color: #fbfbfb;
+}
+.footer {
+  text-align: center;
+  font-size: 1rem;
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+}
+p {
+  margin: .8rem 0 0 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+a:hover {
+  text-decoration: underline;
+}
+.menu {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: white;
+}
+.menu-wrapper {
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2.0;
+}
+.container {
+  width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.section {
+  text-align: left;
+  margin-top: 1rem;
+}
+.section-image {
+  margin-top: 3rem;
+}
+.section-wrap {
+  margin-top: 1rem;
+  background-color: #ffffff;
+  padding: 1rem;
+}
+.section-item {
+  line-height: 1.25;
+}
+.section-title {
+  width: 100%;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.section-content {
+  text-align: center;
+  padding-top: .8rem;
+  width: 100%;
+}
+.section-content img {
+  max-width: 100%;
+  max-height: 520px;
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="menu">
+      <div class="menu-wrapper">
+        HolyImage
+      </div>
+    </div>
+    <div class="container">
+    <%= yield %>
+    </div>
+    <div class="footer">
+      HolyImage &copy; <%= Time.now.strftime("%Y") %>
+    </div>
+  </body>
+</html>

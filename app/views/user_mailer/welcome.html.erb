@@ -1,0 +1,18 @@
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-title">
+      <%= t("mail.welcome.title") %>
+    </div>
+    <div class="section-content">
+      <p>
+        <%= t("mail.welcome.user_info") %><%= @user.name %>。
+      </p>
+      <p>
+        <%= t("mail.welcome.login_link") %><a href="<%= @url %>"><%= @url %></a>
+      </p>
+      <p>
+        <%= t("mail.welcome.enjoy_image") %>
+      </p>
+    </div>
+  </div>
+</div>

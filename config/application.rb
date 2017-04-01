@@ -22,5 +22,17 @@ module Holyimage
     config.i18n.default_locale = "zh-CN"
     config.i18n.fallbacks = true
     config.i18n.fallbacks = [:en]
+
+    # Mail settings
+    config.action_mailer.delivery_method = :sendmail
+    config.action_mailer.smtp_settings = {
+      :address => "localhost",
+      :port    => 25
+    }
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.default_url_options = {
+      :host => ENV["SERVER_NAME"] || "localhost:3000"
+    }
   end
 end
