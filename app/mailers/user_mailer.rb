@@ -1,6 +1,5 @@
 class UserMailer < ApplicationMailer
   default from: "welcome@holyimage.baidu.com"
-  layout "mailer"
 
   def welcome(user, url)
     @user = user
