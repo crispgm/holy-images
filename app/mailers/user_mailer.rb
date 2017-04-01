@@ -1,12 +1,13 @@
 class UserMailer < ApplicationMailer
-  default from: "welcome@holyimage.baidu.com"
-
   def welcome(user, url)
     @user = user
     @url = url
-    mail(to: @user.email, subject: "欢迎加入 HolyImage")
+    mail(to: @user.email, subject: t("mail.welcome.title"))
   end
 
   def featured_photo(user, featured)
+    @user = user
+    @featured = featured
+    mail(to: @user.email, subject: t("mail.featured.title"))
   end
 end

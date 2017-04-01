@@ -48,3 +48,11 @@ en:
   register_success: "Register successfully."
   login_failure: "Login failed."
   login_success: "Login successfully."
+  mail:
+    welcome:
+      title: "Welcome to HolyImage!"
+      user_info: "You have successfully joined HolyImage. Your user name is: "
+      login_link: "If you want to have a look at HolyImage, click the link: "
+      enjoy_image: "Thanks for your choice! Hope you have a good day and enjoy beautiful images from HolyImage <3"
+    featured:
+      title: "HolyImage Featured Photos"

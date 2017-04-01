@@ -48,3 +48,11 @@ zh-CN:
   register_success: "注册成功。"
   login_failure: "登录失败。"
   login_success: "登录成功。"
+  mail:
+    welcome:
+      title: "欢迎来到 HolyImage！"
+      user_info: "您已经成功注册 HolyImage，您的用户名是: "
+      login_link: "如果希望登录 HolyImage，请点击如下链接："
+      enjoy_image: "感谢您加入 HolyImage！也希望您会享受来自 HolyImage 的美图！"
+    featured:
+      title: "HolyImage 每周精选图片"

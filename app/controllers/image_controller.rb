@@ -37,6 +37,9 @@ class ImageController < ApplicationController
   def explore
     @explore = {}
     @explore[:weekly_top] = weekly_top_list
+    # @user = current_user
+    # @user.email = "crispgm@gmail.com"
+    # UserMailer.featured_photo(@user, [] << Image.find(29)).deliver_now
     render "image/explore"
   end
 

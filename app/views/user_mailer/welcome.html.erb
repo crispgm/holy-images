@@ -1,17 +1,17 @@
 <div class="section">
   <div class="section-wrap">
     <div class="section-title">
-      欢迎来到 HolyImage！
+      <%= t("mail.welcome.title") %>
     </div>
     <div class="section-content">
       <p>
-        您已经成功注册 HolyImage，您的用户名是: <%= @user.name %>。
+        <%= t("mail.welcome.user_info") %><%= @user.name %>。
       </p>
       <p>
-        如果希望登录 HolyImage，请点击如下链接：<a href="<%= @url %>"><%= @url %></a>
+        <%= t("mail.welcome.login_link") %><a href="<%= @url %>"><%= @url %></a>
       </p>
       <p>
-        感谢您加入 HolyImage！也希望您会享受来自 HolyImage 的美图！
+        <%= t("mail.welcome.enjoy_image") %>
       </p>
     </div>
   </div>
