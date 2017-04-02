@@ -32,7 +32,7 @@ class UserMailer < ApplicationMailer
   def mime_type_of(filename)
     if filename.end_with?("jpg", "jpeg", "JPG", "JPEG")
       "image/jpeg"
-    elsif filename.end_with("png", "PNG")
+    elsif filename.end_with?("png", "PNG")
       "image/png" 
     else
       nil
