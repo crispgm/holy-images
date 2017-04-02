@@ -71,7 +71,7 @@ class ImageController < ApplicationController
     @image.user = User.find(current_user.id)
 
     if @image.save
-      flash[:info] = "上传成功。"
+      flash[:info] = I18n.t(:upload_success)
     else
       flash[:warning] = @image.errors.messages
     end
@@ -125,7 +125,7 @@ class ImageController < ApplicationController
   private
   def require_login
     unless logged_in?
-      flash[:warning] = "请先登录用户。"
+      flash[:warning] = I18n.t(:login_required)
       redirect_to root_url
     end
   end

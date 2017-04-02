@@ -30,6 +30,7 @@ en:
   upload_image_file: "Image Upload (Recommended)"
   upload_image_url: "External URL (Optional)"
   upload_image_submit: "Submit"
+  upload_success: "Thanks for your upload."
   index_total: "Total"
   index_current: "Current Page"
   index_prev: "Previous"
@@ -48,6 +49,7 @@ en:
   register_success: "Register successfully."
   login_failure: "Login failed."
   login_success: "Login successfully."
+  login_required: "Login required."
   mail:
     welcome:
       title: "Welcome to HolyImage!"

@@ -30,6 +30,7 @@ zh-CN:
   upload_image_file: "图片上传（推荐）"
   upload_image_url: "图片外链（可选）"
   upload_image_submit: "发布"
+  upload_success: "非常感谢！图片上传成功了。"
   index_total: "总共"
   index_current: "当前页"
   index_prev: "上一页"
@@ -48,6 +49,7 @@ zh-CN:
   register_success: "注册成功。"
   login_failure: "登录失败。"
   login_success: "登录成功。"
+  login_required: "请先完成用户登录。"
   mail:
     welcome:
       title: "欢迎来到 HolyImage！"
