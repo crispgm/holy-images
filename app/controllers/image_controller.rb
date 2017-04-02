@@ -45,8 +45,10 @@ class ImageController < ApplicationController
     unless params[:email].blank?
       if params[:email] == "all"
         @users = User.all
-        @user.each do |u|
-          UserMailer.featured_photo(u, digest).deliver_now
+        @users.each do |u|
+          I18n.with_locale(u.locale) do
+            UserMailer.featured_photo(u, digest).deliver_now
+          end
         end
       else
         @user = current_user
