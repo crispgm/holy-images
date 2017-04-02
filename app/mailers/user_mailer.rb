@@ -19,7 +19,8 @@ class UserMailer < ApplicationMailer
     @featured.each_with_index do |p, i|
       unless p.img_file.blank?
         img_file_name = p.img_file(:thumbnail).split("?").at(0)
-        img_path = "#{Dir.pwd}/public/#{img_file_name}"
+        app_path = Rails.application.config.runtime_path
+        img_path = "#{app_path}/public/#{img_file_name}"
 
         attachments.inline["feature_#{i}"] = {
           :data => File.read(img_path),
