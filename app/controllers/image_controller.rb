@@ -37,10 +37,28 @@ class ImageController < ApplicationController
   def explore
     @explore = {}
     @explore[:weekly_top] = weekly_top_list
-    # @user = current_user
-    # @user.email = "crispgm@gmail.com"
-    # UserMailer.featured_photo(@user, [] << Image.find(29)).deliver_now
     render "image/explore"
+  end
+
+  def digest
+    digest = weekly_digest_photos
+    unless params[:email].blank?
+      if params[:email] == "all"
+        @users = User.all
+        @user.each do |u|
+          UserMailer.featured_photo(u, digest).deliver_now
+        end
+      else
+        @user = current_user
+        # @user.email = "crispgm@gmail.com"
+        @user.email = "226225555@qq.com"
+        UserMailer.featured_photo(@user, digest).deliver_now
+      end
+
+      render plain: "sent"
+      return
+    end
+    render plain: "not mail address"
   end
 
   def upload
@@ -110,7 +128,6 @@ class ImageController < ApplicationController
     end
   end
 
-  private
   def new_like(image_id, user_id)
     # add new
     @initial_like = Like.new
@@ -120,13 +137,15 @@ class ImageController < ApplicationController
     @initial_like.save
   end
 
-  private
   def get_likes_num(image_id)
     Like.unscoped.select("id").where(image_id: image_id, status: Like::STATUS_LIKE).count
   end
 
-  private
   def weekly_top_list
     Image.unscoped.joins(:likes).group("likes.image_id").order("count(likes.id) desc").limit(30)
+  end
+
+  def weekly_digest_photos
+    Image.unscoped.joins(:likes).group("likes.image_id").order("created_at desc, count(likes.id) desc").limit(10)
   end
 end

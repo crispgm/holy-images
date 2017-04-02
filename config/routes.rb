@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post "image/like/:id" => "image#like"
 
     get "explore" => "image#explore"
+    get "explore/digest" => "image#digest"
 
     get "user/new" => "user#new"
     get "user/sign-in" => "user#sign_in"

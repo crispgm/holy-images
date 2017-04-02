@@ -7,7 +7,36 @@ class UserMailer < ApplicationMailer
 
   def featured_photo(user, featured)
     @user = user
-    @featured = featured
+    @featured = featured.take(4)
+    # attach uploaded photos
+    attach_inline_photos
+    # send mail
     mail(to: @user.email, subject: t("mail.featured.title"))
+  end
+
+  private
+  def attach_inline_photos
+    @featured.each_with_index do |p, i|
+      unless p.img_file.blank?
+        img_file_name = p.img_file(:thumbnail).split("?").at(0)
+        img_path = "#{Dir.pwd}/public/#{img_file_name}"
+
+        attachments.inline["feature_#{i}"] = {
+          :data => File.read(img_path),
+          :mime_type => mime_type_of(img_file_name),
+          # :encoding => "base64"
+        }
+      end
+    end
+  end
+
+  def mime_type_of(filename)
+    if filename.end_with?("jpg", "jpeg", "JPG", "JPEG")
+      "image/jpeg"
+    elsif filename.end_with("png", "PNG")
+      "image/png" 
+    else
+      nil
+    end
   end
 end
