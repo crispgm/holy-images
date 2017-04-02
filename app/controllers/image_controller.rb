@@ -146,6 +146,6 @@ class ImageController < ApplicationController
   end
 
   def weekly_digest_photos
-    Image.unscoped.joins(:likes).group("likes.image_id").order("created_at desc, count(likes.id) desc").limit(10)
+    Image.unscoped.where(url: "").joins(:likes).group("likes.image_id").order("created_at desc, count(likes.id) desc").limit(10)
   end
 end

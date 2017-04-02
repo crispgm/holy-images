@@ -16,12 +16,7 @@
         <%= link_to image.title, controller: "image", action: "item", id: image.id %>
       </div>
       <div class="section-content">
-        <% if image.url.blank? %>
-          <% next if attachments["feature_#{i}"].blank? %>
-          <%= link_to(image_tag(attachments["feature_#{i}"].url, width: 520, height: 520, alt: "feature photo ##{i}"), controller: "image", action: "item", id: image.id) %>
-        <% else %>
-          <%= link_to(image_tag(image.url, width: 520, height: 520, alt: "feature photo ##{i}"), controller: "image", action: "item", id: image.id) %>
-        <% end %>
+        <%= link_to(image_tag(attachments["feature_#{i}"].url, width: 520, height: 520, alt: "feature photo ##{i}"), controller: "image", action: "item", id: image.id) %>
       </div>
     </div>
   </div>

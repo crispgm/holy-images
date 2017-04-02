@@ -17,17 +17,15 @@ class UserMailer < ApplicationMailer
   private
   def attach_inline_photos
     @featured.each_with_index do |p, i|
-      unless p.img_file.blank?
-        img_file_name = p.img_file(:thumbnail).split("?").at(0)
-        app_path = Rails.application.config.runtime_path
-        img_path = "#{app_path}/public/#{img_file_name}"
+      img_file_name = p.img_file(:thumbnail).split("?").at(0)
+      app_path = Rails.application.config.runtime_path
+      img_path = "#{app_path}/public/#{img_file_name}"
 
-        attachments.inline["feature_#{i}"] = {
-          :data => File.read(img_path),
-          :mime_type => mime_type_of(img_file_name),
-          # :encoding => "base64"
-        }
-      end
+      attachments.inline["feature_#{i}"] = {
+        :data => File.read(img_path),
+        :mime_type => mime_type_of(img_file_name),
+        # :encoding => "base64"
+      }
     end
   end
 

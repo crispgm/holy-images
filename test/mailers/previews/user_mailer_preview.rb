@@ -5,7 +5,7 @@ class UserMailerPreview < ActionMailer::Preview
   end
 
   def featured_photo
-    featured = Image.unscoped.joins(:likes).group("likes.image_id").order("created_at desc, count(likes.id) desc").limit(10)
+    featured = Image.unscoped.where(url: "").joins(:likes).group("likes.image_id").order("created_at desc, count(likes.id) desc").limit(10)
     UserMailer.featured_photo(User.first, featured)
   end
 end
