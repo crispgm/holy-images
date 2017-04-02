@@ -34,8 +34,10 @@ class UserMailer < ApplicationMailer
       "image/jpeg"
     elsif filename.end_with?("png", "PNG")
       "image/png"
+    elsif filename.end_with?("gif", "GIF")
+      "image/gif"
     else
-      filename.split(".").last
+      nil
     end
   end
 end
