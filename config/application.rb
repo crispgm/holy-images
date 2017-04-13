@@ -34,5 +34,8 @@ module Holyimage
     config.action_mailer.default_url_options = {
       :host => ENV["SERVER_NAME"] || "localhost:3000"
     }
+
+    # add external assets
+    config.assets.paths << Rails.root.join('vendor', 'assets')
   end
 end
