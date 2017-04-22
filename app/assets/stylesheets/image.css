@@ -48,17 +48,14 @@ img.gravatar {
 .section-square:hover .section-overlay {
   display: block;
 }
-/*.section-blur img{
-  -webkit-filter: blur(5px);
-  filter: blur(5px);
-}
-.section-blur:hover img{
+.section-blur img{
   -webkit-filter: none;
   filter: none;
 }
-.section-blur:hover .section-overlay {
-  display: none;
-}*/
+.section-blur:hover img{
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
 @media (max-width: 36rem) {
   .section-explore {
     display: flex;
