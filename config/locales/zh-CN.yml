@@ -58,3 +58,6 @@ zh-CN:
       enjoy_image: "感谢您加入 HolyImage！也希望您会享受来自 HolyImage 的美图！"
     featured:
       title: "HolyImage 每周精选图片"
+  comment:
+    title: "评论"
+    new: "发布"

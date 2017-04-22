@@ -6,7 +6,7 @@ class Like < ApplicationRecord
   belongs_to :image
 
   default_scope do
-    order(updated_at: :desc)
     where(status: STATUS_LIKE)
+    order(updated_at: :desc)
   end
 end

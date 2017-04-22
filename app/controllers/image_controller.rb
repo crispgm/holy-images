@@ -6,7 +6,8 @@ class ImageController < ApplicationController
 
   def item
     @image = Image.find(params[:id])
-    @likes = Like.where(image_id: @image.id)
+    @likes = @image.likes
+    @comments = @image.comments
 
     @image.liked = false
     if logged_in?
@@ -79,6 +80,22 @@ class ImageController < ApplicationController
     redirect_to root_url
   end
 
+  def comment
+    image_id = params[:id]
+    user_id = current_user.id
+
+    @comment = Comment.new
+    params.require(:comment).permit(:content)
+    @comment.content = params[:comment][:content]
+    @comment.user_id = user_id
+    @comment.image_id = image_id
+    @comment.status = Comment::STATUS_OK
+    @comment.save
+
+    # render
+    redirect_to "/image/#{image_id}"
+  end
+
   def like
     image_id = params[:id]
     user_id = current_user.id
@@ -133,8 +150,8 @@ class ImageController < ApplicationController
   def new_like(image_id, user_id)
     # add new
     @initial_like = Like.new
-    @initial_like.user = User.find(user_id)
-    @initial_like.image = Image.find(image_id)
+    @initial_like.user_id = user_id
+    @initial_like.image_id = image_id
     @initial_like.status = Like::STATUS_LIKE
     @initial_like.save
   end

@@ -10,7 +10,7 @@ en:
   exif_software: "Software"
   exif_resolution: "Resolution"
   like: "Like"
-  return: "Return"
+  return: "Back"
   explore: "Explore"
   register: "Register"
   login: "Login"
@@ -58,3 +58,6 @@ en:
       enjoy_image: "Thanks for your choice! Hope you have a good day and enjoy beautiful images from HolyImage <3"
     featured:
       title: "HolyImage Featured Photos"
+  comment:
+    title: "Comments"
+    new: "Post"

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get "image/:id" => "image#item"
     post "image/create" => "image#create"
     post "image/like/:id" => "image#like"
+    post "image/comment/:id" => "image#comment"
 
     get "explore" => "image#explore"
     get "explore/digest" => "image#digest"
