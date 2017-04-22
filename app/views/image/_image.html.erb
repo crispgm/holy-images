@@ -34,9 +34,9 @@
         <% else %>
           <%= link_to icon("heart-o"), "/image/like/#{image.id}", remote: true, method: :post, :id => "image-like-#{image.id}", :class => "image-like" %>
         <% end %>
-        <span class="like-count"><%= image.likes.count %></span>
+        <span class="like-count" id="like-count-<%= image.id %>"><%= image.likes.count %></span>
         <%= link_to icon("comment-o"), "/image/#{image.id}#comments" %>
-        <span class="comment-count"><%= image.comments.count %></span>
+        <span class="comment-count" id="comment-count-<%= image.id %>"><%= image.comments.count %></span>
       </div>
       <div class="section-footer">
         <div class="section-footer-icon">
