@@ -164,7 +164,15 @@ a:hover {
 .section-action {
   text-align: right;
   float: right;
-  padding-top: .8rem;
+  padding-top: 1.3rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: .8rem;
+}
+.section-action .fa {
+  margin-left: .6rem;
+  margin-right: .2rem;
+  font-size: 1rem;
 }
 .section-footer {
   padding-top: .8rem;
