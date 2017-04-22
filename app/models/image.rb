@@ -4,6 +4,7 @@ class Image < ApplicationRecord
 
   belongs_to :user
   has_many :likes, -> { where status: Like::STATUS_LIKE }
+  has_many :comments, -> { where status: Comment::STATUS_OK }
 
   validates :title, length: {minimum: 2}, presence: true
   has_attached_file :img_file, styles: { thumbnail: "640x640#" }
