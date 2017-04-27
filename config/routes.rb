@@ -22,4 +22,12 @@ Rails.application.routes.draw do
 
     root "index#index"
   end
+
+  namespace :api do
+    namespace :v1, constraints: { format: 'json' } do
+      get "images" => "images#index"
+      get "images/:id" => "images#show"
+      post "images" => "images#create"
+    end
+  end
 end

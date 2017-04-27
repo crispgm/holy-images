@@ -15,24 +15,6 @@ class ImageController < ApplicationController
         @image.liked = true if like.user_id == current_user.id
       end
     end
-
-    begin
-      image_local_original = @image.img_file(:original).split("?").at(0)
-      image_prefix = Rails.application.config.runtime_path
-
-      exif = Exif::Data.new("#{image_prefix}/public#{image_local_original}")
-
-      @image.exif = {}
-      @image.exif[:model] = "#{exif.make} #{exif.model}"
-      @image.exif[:focal_length] = "#{exif.focal_length_in_35mm_film}"
-      @image.exif[:aperture] = exif.fnumber
-      @image.exif[:shutter_speed] = exif.exposure_time
-      @image.exif[:ISO] = exif.iso_speed_ratings
-      @image.exif[:software] = exif.software
-      @image.exif[:resolution] = "#{exif.pixel_x_dimension}x#{exif.pixel_y_dimension}"
-    rescue
-      @image.exif = nil
-    end
   end
 
   def explore
@@ -53,7 +35,6 @@ class ImageController < ApplicationController
         end
       else
         @user = current_user
-        # @user.email = "crispgm@gmail.com"
         @user.email = "226225555@qq.com"
         UserMailer.featured_photo(@user, digest).deliver_now
       end

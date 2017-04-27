@@ -26,4 +26,27 @@ class Image < ApplicationRecord
   def img_url(style = :thumbnail)
     url.blank? ? img_file(style) : url
   end
+
+  def exif
+    exif = {}
+    begin
+      image_local_original = img_file(:original).split("?").at(0)
+      
+      image_prefix = Rails.application.config.runtime_path
+
+      exif_data = Exif::Data.new("#{image_prefix}/public#{image_local_original}")
+
+      exif[:model] = "#{exif_data.make} #{exif_data.model}"
+      exif[:focal_length] = exif_data.focal_length_in_35mm_film
+      exif[:aperture] = exif_data.fnumber
+      exif[:shutter_speed] = exif_data.exposure_time
+      exif[:ISO] = exif_data.iso_speed_ratings
+      exif[:software] = exif_data.software
+      exif[:resolution] = "#{exif_data.pixel_x_dimension}x#{exif_data.pixel_y_dimension}"
+    rescue
+      exif = nil
+    end
+
+    exif
+  end
 end
