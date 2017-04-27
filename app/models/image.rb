@@ -37,7 +37,7 @@ class Image < ApplicationRecord
       exif_data = Exif::Data.new("#{image_prefix}/public#{image_local_original}")
 
       exif[:model] = "#{exif_data.make} #{exif_data.model}"
-      exif[:focal_length] = "#{exif_data.focal_length_in_35mm_film}"
+      exif[:focal_length] = exif_data.focal_length_in_35mm_film
       exif[:aperture] = exif_data.fnumber
       exif[:shutter_speed] = exif_data.exposure_time
       exif[:ISO] = exif_data.iso_speed_ratings
@@ -46,7 +46,7 @@ class Image < ApplicationRecord
     rescue
       exif = nil
     end
-    logger.info exif.inspect
+
     exif
   end
 end
