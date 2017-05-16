@@ -57,3 +57,5 @@ gem 'gravtastic'
 gem 'paperclip'
 gem 'exif'
 gem 'font-awesome-sass', '~> 4.7.0'
+
+ruby "2.4.1"

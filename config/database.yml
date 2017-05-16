@@ -26,3 +26,5 @@ test:
 production:
   <<: *default
   database: dripcoffee_app_prod
+  user: dripcoffee
+  password: <%= ENV['DRIPCOFFEE_APP_PASSWD'] %>
