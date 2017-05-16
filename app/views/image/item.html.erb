@@ -8,12 +8,7 @@
     </div>
     <div class="section-content">
       <% @likes.each do |like| %>
-      <div class="section-time">
-        <%= like.updated_at.strftime("%Y-%m-%d %H:%M") %>
-      </div>
-      <div>
-        <%= like.user.name %>
-      </div>
+        <%= image_tag(like.user.gravatar_url, :class => "gravatar", :title => like.user.name) %>
       <% end %>
     </div>
   </div>
