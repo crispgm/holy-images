@@ -15,38 +15,7 @@
 </div>
 <% end %>
 
-<div class="section" id="comments">
-  <div class="section-wrap">
-    <div class="section-item">
-      <div class="section-title">
-        <%= t("comment.title") %>
-      </div>
-      <div class="section-content">
-        <%= form_for :comment, method: :post, url: "/image/comment/#{@image.id}" do |f| %>
-          <%= f.text_area :content, class: "comment-new" %>
-          <%= f.submit t("comment.new") %>
-        <% end %>
-      </div>
-      <div class="section-content">
-        <% @comments.each do |comment| %>
-        <div class="section-comment">
-          <div class="section-comment-header">
-            <div class="section-time">
-              <%= comment.created_at.strftime("%Y-%m-%d %H:%M") %>
-            </div>
-            <div class="section-comment-name">
-              <%= comment.user.name %>
-            </div>
-          </div>
-          <div class="section-comment-content">
-            <%= comment.content %>
-          </div>
-        </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: "image/comment", object: @comments %>
 
 <div class="section" id="return">
   <div class="section-wrap info">
