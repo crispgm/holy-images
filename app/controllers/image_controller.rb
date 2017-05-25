@@ -1,6 +1,7 @@
 class ImageController < ApplicationController
   include UserHelper
   include ImageHelper
+  include TimeHelper
 
   before_action :require_login
 
