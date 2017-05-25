@@ -76,10 +76,11 @@ class ImageController < ApplicationController
 
     # notify
     notif = Notification.new
-    notif.user_id = @comment.user_id
+    notif.user_id = Image.find(image_id).user_id
     notif.event_type = Notification::NOTIFICATION_TYPES[:comment]
     notif.event_id = @comment.image_id
     notif.status = Notification::STATUS_OK
+    notif.event_from_user_id = @comment.user_id
     notif.save
 
     # render
@@ -119,6 +120,17 @@ class ImageController < ApplicationController
       else
         result[:status] = -2
       end
+    end
+
+    if result[:status] == Like::STATUS_LIKE
+      # notify
+      notif = Notification.new
+      notif.user_id = Image.find(image_id).user_id
+      notif.event_type = Notification::NOTIFICATION_TYPES[:like]
+      notif.event_id = image_id
+      notif.status = Notification::STATUS_OK
+      notif.event_from_user_id = user_id
+      notif.save
     end
 
     # render
