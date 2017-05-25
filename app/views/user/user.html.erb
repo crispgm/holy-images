@@ -1,4 +1,14 @@
 <div class="section">
+  <div class="section-wrap info">
+    <div class="section-item">
+      <div class="section-title">
+        <%= t(:user_center) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
   <div class="section-wrap">
     <div class="section-item">
       <div class="section-time">
@@ -17,7 +27,7 @@
 
 <% if logged_in? && current_user.name == params[:name] %>
 <div class="section" id="invitation">
-  <div class="section-wrap info">
+  <div class="section-wrap">
     <div class="section-item">
       <div class="section-title">
         <%= t(:invite_link_title) %>
@@ -54,7 +64,7 @@
 
 <% if logged_in? && current_user.name == params[:name] %>
 <div class="section" id="operations">
-  <div class="section-wrap warning">
+  <div class="section-wrap">
     <div class="section-item">
       <div class="section-title">
         <%= t(:user_operations) %>
