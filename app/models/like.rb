@@ -5,6 +5,8 @@ class Like < ApplicationRecord
   belongs_to :user
   belongs_to :image
 
+  has_many :notification, as: :event
+
   default_scope do
     where(status: STATUS_LIKE)
     order(updated_at: :desc)
