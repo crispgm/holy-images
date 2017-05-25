@@ -1,0 +1,32 @@
+<div class="section">
+  <div class="section-wrap info">
+    <div class="section-item">
+      <div class="section-title">
+        <%= t("notification.title") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-item">
+    <% @notifications.each do |notification| %>
+      <div class="section-time">
+        <%= format_time(notification.created_at) %>
+      </div>
+      <div class="section-title">
+        <a href="/image/<%= notification.event_id %>">
+        <%= @event_user[notification.event_from_user_id].name %>
+        <% case notification.event_type
+           when 1 %>
+          <%= t("notification.like") %>
+        <% when 2 %>
+          <%= t("notification.comment") %>
+        <% end %>
+        </a>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

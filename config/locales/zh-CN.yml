@@ -61,3 +61,7 @@ zh-CN:
   comment:
     title: "评论"
     new: "发布"
+  notification:
+    title: "通知中心"
+    like: "赞了你的照片"
+    comment: "评论了你的照片"

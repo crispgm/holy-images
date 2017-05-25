@@ -61,3 +61,7 @@ en:
   comment:
     title: "Comments"
     new: "Post"
+  notification:
+    title: "Notifications"
+    like: "liked your photo"
+    comment: "commented your photo"
