@@ -73,6 +73,14 @@ class ImageController < ApplicationController
     @comment.status = Comment::STATUS_OK
     @comment.save
 
+    # notify
+    notif = Notification.new
+    notif.user_id = @comment.user_id
+    notif.event_type = Notification::NOTIFICATION_TYPES[:comment]
+    notif.event_id = @comment.image_id
+    notif.status = Notification::STATUS_OK
+    notif.save
+
     # render
     redirect_to "/image/#{image_id}"
   end
