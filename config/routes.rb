@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     post "user/create" => "user#create"
     post "user/login" => "user#login"
     post "user/logout" => "user#logout"
+    get "user/notification" => "user#notification"
     get "u/:name" => "user#info"
     get "u/:name/invitation" => "user#invite"
 

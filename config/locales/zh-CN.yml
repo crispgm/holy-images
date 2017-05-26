@@ -37,6 +37,7 @@ zh-CN:
   index_next: "下一页"
   invite_title: "正在邀请您加入 HolyImage..."
   invite_link_title: "邀请注册"
+  user_center: "用户信息"
   user_name: "用户名"
   user_email: "Email"
   user_password: "密码"
@@ -61,3 +62,7 @@ zh-CN:
   comment:
     title: "评论"
     new: "发布"
+  notification:
+    title: "通知中心"
+    like: "赞了你的照片"
+    comment: "评论了你的照片"

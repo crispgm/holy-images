@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :images
   has_many :likes
   has_many :comments
+  has_many :notifications
 
   validates :name, presence: true, uniqueness: true, on: :create
   validates :email, email: true, uniqueness: true, on: :create

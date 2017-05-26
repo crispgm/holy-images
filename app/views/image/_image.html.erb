@@ -5,14 +5,7 @@
   <div class="section-wrap hover-effect">
     <div class="section-item">
       <div class="section-time">
-        <%= image.created_at.strftime("%H:%M") %>
-        <% unless image.created_at.today? %>
-          <% unless image.created_at.this_year? %>
-            <%= image.created_at.strftime("%Y-%m-%d") %>
-          <% else %>
-            <%= image.created_at.strftime("%m-%d") %>
-          <% end %>
-        <% end %>
+        <%= format_time(image.created_at) %>
       </div>
       <div class="section-title">
         <% if defined?(nolink) && nolink == true %>

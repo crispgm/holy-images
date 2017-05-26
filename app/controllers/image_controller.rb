@@ -1,6 +1,7 @@
 class ImageController < ApplicationController
   include UserHelper
   include ImageHelper
+  include TimeHelper
 
   before_action :require_login
 
@@ -73,6 +74,9 @@ class ImageController < ApplicationController
     @comment.status = Comment::STATUS_OK
     @comment.save
 
+    # notify
+    send_notification(@comment.image_id, @comment.user_id, Image.find(image_id).user_id, :comment)
+
     # render
     redirect_to "/image/#{image_id}"
   end
@@ -112,6 +116,10 @@ class ImageController < ApplicationController
       end
     end
 
+    if result[:status] == Like::STATUS_LIKE
+      send_notification(image_id, user_id, Image.find(image_id).user_id, :like)
+    end
+
     # render
     respond_to do |format|
       format.json do
@@ -126,6 +134,17 @@ class ImageController < ApplicationController
       flash[:warning] = I18n.t(:login_required)
       redirect_to root_url
     end
+  end
+
+  def send_notification(image_id, from_user_id, to_user_id, type)
+    return if from_user_id == to_user_id
+    notif = Notification.new
+    notif.user_id = to_user_id
+    notif.event_type = Notification::NOTIFICATION_TYPES[type.to_sym]
+    notif.event_id = image_id
+    notif.status = Notification::STATUS_OK
+    notif.event_from_user_id = from_user_id
+    notif.save
   end
 
   def new_like(image_id, user_id)

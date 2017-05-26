@@ -37,6 +37,7 @@ en:
   index_next: "Next"
   invite_title: "is inviting you to join HolyImage..."
   invite_link_title: "Invite your friends"
+  user_center: "User Info"
   user_name: "User Name"
   user_email: "Email"
   user_password: "Password"
@@ -61,3 +62,7 @@ en:
   comment:
     title: "Comments"
     new: "Post"
+  notification:
+    title: "Notifications"
+    like: "liked your photo"
+    comment: "commented your photo"
