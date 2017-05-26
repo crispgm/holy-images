@@ -11,13 +11,15 @@ Rails.application.routes.draw do
     get "explore" => "image#explore"
     get "explore/digest" => "image#digest"
 
+    get "notification/read" => "notification#read"
+    get "notification" => "notification#list"
+
     get "user/new" => "user#new"
     get "user/sign-in" => "user#sign_in"
     post "user/locale" => "user#locale"
     post "user/create" => "user#create"
     post "user/login" => "user#login"
     post "user/logout" => "user#logout"
-    get "user/notification" => "user#notification"
     get "u/:name" => "user#info"
     get "u/:name/invitation" => "user#invite"
 

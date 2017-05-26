@@ -1,6 +1,9 @@
 <div class="section">
   <div class="section-wrap info">
     <div class="section-item">
+      <div class="section-time">
+        <a href="/notification/read?id=all"><%= t("notification.clear_all") %></a>
+      </div>
       <div class="section-title">
         <%= t("notification.title") %>
       </div>
@@ -16,16 +19,21 @@
         <%= format_time(notification.created_at) %>
       </div>
       <div class="section-title">
+        <% if notification.status == 0 %>
+          <strong>
+        <% end %>
         <%= notification.event_from_user.name %>
+        <a href="/notification/read?id=<%= notification.id %>">
         <% case notification.event_type
            when 1 %>
-          <a href="/image/<%= notification.like.image_id %>">
           <%= t("notification.like") %>
         <% when 2 %>
-          <a href="/image/<%= notification.comment.image_id %>">
           <%= t("notification.comment") %>
         <% end %>
         </a>
+        <% if notification.status == 0 %>
+        </strong>
+        <% end %>
       </div>
     <% end %>
     </div>

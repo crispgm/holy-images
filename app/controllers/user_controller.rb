@@ -1,5 +1,4 @@
 class UserController < ApplicationController
-  include UserHelper
   include TimeHelper
   
   def sign_in
@@ -64,13 +63,6 @@ class UserController < ApplicationController
     I18n.locale = params[:locale] || I18n.default_locale
     current_user.locale = I18n.locale
     current_user.save
-  end
-
-  def notification
-    @user = current_user
-    @notifications = Notification.where(user_id: @user.id).last(20).reverse
-
-    render "user/notification"
   end
 
   private
