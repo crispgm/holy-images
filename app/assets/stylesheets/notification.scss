@@ -1,3 +1,13 @@
 // Place all the styles related to the Notification controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.fa {
+  color: #777;	
+  &:hover {
+    color: #333;
+  }
+}
+.badge {
+  color: #333;
+}

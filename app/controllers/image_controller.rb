@@ -1,5 +1,4 @@
 class ImageController < ApplicationController
-  include UserHelper
   include ImageHelper
   include TimeHelper
 
