@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170525162935) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "comments", force: :cascade do |t|
     t.string   "content"
     t.integer  "quote_comment"
@@ -23,7 +20,7 @@ ActiveRecord::Schema.define(version: 20170525162935) do
     t.datetime "updated_at",                null: false
     t.integer  "image_id",      default: 0, null: false
     t.integer  "user_id",       default: 0, null: false
-    t.index ["image_id", "user_id"], name: "index_comments_on_image_id_and_user_id", using: :btree
+    t.index ["image_id", "user_id"], name: "index_comments_on_image_id_and_user_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -36,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170525162935) do
     t.string   "img_file_content_type"
     t.integer  "img_file_file_size"
     t.datetime "img_file_updated_at"
-    t.index ["user_id"], name: "index_images_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_images_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -45,9 +42,9 @@ ActiveRecord::Schema.define(version: 20170525162935) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "image_id"
-    t.index ["image_id", "user_id"], name: "index_likes_on_image_id_and_user_id", unique: true, using: :btree
-    t.index ["image_id"], name: "index_likes_on_image_id", using: :btree
-    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
+    t.index ["image_id", "user_id"], name: "index_likes_on_image_id_and_user_id", unique: true
+    t.index ["image_id"], name: "index_likes_on_image_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -58,7 +55,7 @@ ActiveRecord::Schema.define(version: 20170525162935) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.integer  "event_from_user_id", default: 0, null: false
-    t.index ["user_id"], name: "index_notifications_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
