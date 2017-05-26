@@ -13,10 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require "jq-sticky-anything.min.js"
-
-$(document).ready(function(){
-  $('header.menu').stickThis({
-  	pushup: '.container'
-  });
-});
