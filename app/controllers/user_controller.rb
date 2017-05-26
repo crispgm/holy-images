@@ -69,14 +69,6 @@ class UserController < ApplicationController
   def notification
     @user = current_user
     @notifications = Notification.where(user_id: @user.id).last(20).reverse
-    from_user = []
-    @notifications.each do |n|
-      from_user << n.event_from_user_id
-    end
-    @event_user = {}
-    User.find(from_user).each do |u|
-      @event_user[u.id] = u
-    end
 
     render "user/notification"
   end

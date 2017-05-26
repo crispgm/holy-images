@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :image
 
-  has_many :notification, as: :event
+  has_many :notifications, as: :event
 
   validates :content, length: {maximum: 140}, presence: true
 

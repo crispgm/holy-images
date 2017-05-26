@@ -75,7 +75,7 @@ class ImageController < ApplicationController
     @comment.save
 
     # notify
-    send_notification(@comment.image_id, @comment.user_id, Image.find(image_id).user_id, :comment)
+    send_notification(@comment.id, @comment.user_id, Image.find(image_id).user_id, :comment)
 
     # render
     redirect_to "/image/#{image_id}"
@@ -117,7 +117,7 @@ class ImageController < ApplicationController
     end
 
     if result[:status] == Like::STATUS_LIKE
-      send_notification(image_id, user_id, Image.find(image_id).user_id, :like)
+      send_notification(@like.id, user_id, Image.find(image_id).user_id, :like)
     end
 
     # render
@@ -136,15 +136,17 @@ class ImageController < ApplicationController
     end
   end
 
-  def send_notification(image_id, from_user_id, to_user_id, type)
+  def send_notification(event_id, from_user_id, to_user_id, type)
     return if from_user_id == to_user_id
     notif = Notification.new
     notif.user_id = to_user_id
-    notif.event_type = Notification::NOTIFICATION_TYPES[type.to_sym]
-    notif.event_id = image_id
+    notif.event_type = Notification::NOTIFICATION_TYPES[type]
+    notif.event_id = event_id
     notif.status = Notification::STATUS_OK
     notif.event_from_user_id = from_user_id
     notif.save
+    logger.info notif.inspect
+    logger.info notif.errors.inspect
   end
 
   def new_like(image_id, user_id)

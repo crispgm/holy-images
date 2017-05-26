@@ -5,7 +5,7 @@ class Like < ApplicationRecord
   belongs_to :user
   belongs_to :image
 
-  has_many :notification, as: :event
+  has_many :notifications, as: :event
 
   default_scope do
     where(status: STATUS_LIKE)

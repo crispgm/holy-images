@@ -16,12 +16,13 @@
         <%= format_time(notification.created_at) %>
       </div>
       <div class="section-title">
-        <a href="/image/<%= notification.event_id %>">
-        <%= @event_user[notification.event_from_user_id].name %>
+        <%= notification.event_from_user.name %>
         <% case notification.event_type
            when 1 %>
+          <a href="/image/<%= notification.like.image_id %>">
           <%= t("notification.like") %>
         <% when 2 %>
+          <a href="/image/<%= notification.comment.image_id %>">
           <%= t("notification.comment") %>
         <% end %>
         </a>
