@@ -1,0 +1,18 @@
+language: ruby
+sudo: false
+rvm:
+  - 2.3.0
+env:
+  CODECLIMATE_REPO_TOKEN: 9864cbc4663f7b752905e52cec696aab5e2e7d889a7498fbf703deb49d275b4d
+before_script:
+  - cp config/secrets.travis.yml config/secrets.yml
+script:
+  - bundle install
+  - RAILS_ENV=test bin/rails db:create
+  - RAILS_ENV=test bin/rails db:migrate
+  - bin/rails test
+after_success:
+  - bundle exec codeclimate-test-reporter
+notifications:
+  email: false
+  slack: navyblue-team:ioO5diAGc5WUQVDKc5BH1UbE
