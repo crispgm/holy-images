@@ -1,6 +1,6 @@
 <% if logged_in? %>
   <span><%= link_to icon("asterisk"), controller: "image", action: "explore" %></span>
-  <span><%= link_to icon("inbox"), controller: "user", action: "notification" %></span>
+  <span><%= link_to icon("inbox", class: @is_notified ? 'badge' : ''), controller: "notification", action: "list" %></span>
   <span><%= link_to icon("plus"), controller: "image", action: "upload" %></span>
   <span><%= link_to icon("user-circle-o"), controller: "user", action: "info", name: current_user.name %></span>
 <% else %>

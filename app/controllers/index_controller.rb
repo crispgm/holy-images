@@ -1,6 +1,4 @@
-class IndexController < ApplicationController
-  include UserHelper
-  
+class IndexController < ApplicationController  
   def index
     unless logged_in?
       @images = Image.unscoped.joins(:likes).group("likes.image_id").order("count(likes.id) desc").limit(18)
