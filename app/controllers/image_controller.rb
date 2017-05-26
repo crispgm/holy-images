@@ -161,25 +161,10 @@ class ImageController < ApplicationController
   end
 
   def weekly_top_list
-    image_list = Image.unscoped.select("likes.image_id,COUNT(likes.id) AS like_count").
-        joins(:likes).group("likes.image_id,likes.id").order("like_count desc").limit(30)
-    
-    images = []
-    image_list.each do |item|
-      images << Image.find(item.image_id)
-    end
-    images
+    Image.unscoped.joins(:likes).group("likes.image_id").order("count(likes.id) desc").limit(30)
   end
 
   def weekly_digest_photos
-    # Image.unscoped.where(url: "").joins(:likes).group("likes.image_id").order("created_at desc, count(likes.id) desc").limit(10)
-    image_list = Image.unscoped.where(url: "").select("likes.image_id,likes.created_at,COUNT(likes.id) AS like_count").
-        joins(:likes).group("likes.image_id,likes.id,likes.created_at").order("likes.created_at desc, like_count desc").limit(10)
-
-    images = []
-    image_list.each do |item|
-      images << Image.find(item.image_id)
-    end
-    images
+    Image.unscoped.where(url: "").joins(:likes).group("likes.image_id").order("created_at desc, count(likes.id) desc").limit(10)
   end
 end

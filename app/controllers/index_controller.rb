@@ -3,13 +3,8 @@ class IndexController < ApplicationController
   
   def index
     unless logged_in?
-      image_list = Image.unscoped.select("likes.image_id,COUNT(likes.id) AS like_count").
-        joins(:likes).group("likes.image_id,likes.id").order("like_count desc").limit(18)
-
-      @images = []
-      image_list.each do |item|
-        @images << Image.find(item.image_id)
-      end
+      @images = Image.unscoped.joins(:likes).group("likes.image_id").order("count(likes.id) desc").limit(18)
+      
       render "index/landing"
     else
       page = params[:p].to_i || 1

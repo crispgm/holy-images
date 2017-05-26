@@ -5,26 +5,21 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: sqlite3
   pool: 5
   timeout: 5000
-  username: dripcoffee
-  password:
 
 development:
   <<: *default
-  database: dripcoffee_app_dev
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: dripcoffee_app_test
+  database: db/test.sqlite3
 
 production:
   <<: *default
-  database: dripcoffee_app_prod
-  user: dripcoffee
-  password: <%= ENV['DRIPCOFFEE_APP_PASSWD'] %>
+  database: db/production.sqlite3
