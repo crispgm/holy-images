@@ -3,9 +3,13 @@
 one:
   user_id: 1
   event_type: 1
-  target_id: 1
+  event_id: 1
+  status: 0
+  event_from_user_id: 2
 
 two:
   user_id: 1
-  event_type: 1
-  target_id: 1
+  event_type: 2
+  event_id: 1
+  status: 0
+  event_from_user_id: 2
