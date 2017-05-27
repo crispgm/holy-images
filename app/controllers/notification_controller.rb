@@ -21,7 +21,7 @@ class NotificationController < ApplicationController
     else
       id = id.to_i
       result = Notification.where(status: 0, user_id: user.id, id: id).update(status: 1)
-      redirect_to "/image/#{id}"
+      redirect_to "/image/#{id}#comments"
     end
   end
 
