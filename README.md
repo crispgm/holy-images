@@ -1,18 +1,19 @@
-# HolyImage
+# HolyImages
 
 [![](https://api.travis-ci.org/crispgm/holy-images.svg?branch=master)](https://travis-ci.org/crispgm/holy-images)
-[![Code Climate](https://codeclimate.com/github/crispgm/holy-images/badges/gpa.svg)](https://codeclimate.com/github/crispgm/holy-images)
-[![Test Coverage](https://codeclimate.com/github/crispgm/holy-images/badges/coverage.svg)](https://codeclimate.com/github/crispgm/holy-images/coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/41867af362501c3d9b17/maintainability)](https://codeclimate.com/github/crispgm/holy-images/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/41867af362501c3d9b17/test_coverage)](https://codeclimate.com/github/crispgm/holy-images/test_coverage)
 
-HolyImage is an image-based social network.
+HolyImages is a simple image sharing social network.
 
 ## Features
 
-* Image Upload/Like
+* Image Upload
 * Image Explore
 * EXIF Data
+* Likes & Comments
 * User System
-* Gravatar
+* Notifications
 
 ## Setup
 

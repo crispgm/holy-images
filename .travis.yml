@@ -3,7 +3,7 @@ sudo: false
 rvm:
   - 2.3.0
 env:
-  CODECLIMATE_REPO_TOKEN: 9864cbc4663f7b752905e52cec696aab5e2e7d889a7498fbf703deb49d275b4d
+  CODECLIMATE_REPO_TOKEN: 63287804b219939c438c95acb8d4bf844a6773c59444e3c21efda942eae9ba7e
 before_script:
   - cp config/secrets.travis.yml config/secrets.yml
 script:
