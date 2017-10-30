@@ -1,8 +1,8 @@
 # HolyImage
 
 [![](https://api.travis-ci.org/crispgm/holy-images.svg?branch=master)](https://travis-ci.org/crispgm/holy-images)
-[![Code Climate](https://codeclimate.com/github/dripcoffee/holy-images/badges/gpa.svg)](https://codeclimate.com/github/dripcoffee/holy-images)
-[![Test Coverage](https://codeclimate.com/github/dripcoffee/holy-images/badges/coverage.svg)](https://codeclimate.com/github/dripcoffee/holy-images/coverage)
+[![Code Climate](https://codeclimate.com/github/crispgm/holy-images/badges/gpa.svg)](https://codeclimate.com/github/crispgm/holy-images)
+[![Test Coverage](https://codeclimate.com/github/crispgm/holy-images/badges/coverage.svg)](https://codeclimate.com/github/crispgm/holy-images/coverage)
 
 HolyImage is an image-based social network.
 
