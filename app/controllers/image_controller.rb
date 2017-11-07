@@ -107,7 +107,8 @@ class ImageController < ApplicationController
         result[:status] = -1
       end
     else
-      if new_like(image_id, user_id)
+      @like = new_like(image_id, user_id)
+      if @like
         result[:status] = Like::STATUS_LIKE
         result[:cur_num] = get_likes_num(image_id)
       else
@@ -149,12 +150,12 @@ class ImageController < ApplicationController
   end
 
   def new_like(image_id, user_id)
-    # add new
     @initial_like = Like.new
     @initial_like.user_id = user_id
     @initial_like.image_id = image_id
     @initial_like.status = Like::STATUS_LIKE
     @initial_like.save
+    @initial_like
   end
 
   def get_likes_num(image_id)
