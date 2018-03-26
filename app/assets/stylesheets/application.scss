@@ -14,15 +14,18 @@
 * {
   box-sizing: border-box;
 }
+
 html {
   width: 100%;
   font-size: 16px;
 }
+
 @media (max-width: 36rem) {
   html {
     font-size: 12px;
   }
 }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
@@ -34,10 +37,12 @@ body {
   text-align: center;
   height: 100%;
 }
+
 body ::selection {
   background-color: #333;
   color: #fbfbfb;
 }
+
 footer {
   text-align: center;
   font-size: 1rem;
@@ -45,45 +50,53 @@ footer {
   margin-top: 2rem;
   margin-bottom: 1.2rem;
 }
+
 p {
   margin: .8rem 0 0 0;
 }
+
 table {
   width: 100%;
   border-spacing: 0;
 }
+
 th {
   background-color: #facb5b;
   padding: .2rem .4rem .2rem .4rem;
 }
+
 tr:hover {
   background-color: #facb5b;
 }
+
 a {
   text-decoration: none;
-  color: #333;
+  color: inherit;
 }
+
 a:hover {
   text-decoration: underline;
 }
+
 .menu {
-  // position: fixed;
-  // top: 0;
-  // width: 100%;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   background-color: white;
   font-size: 1.4rem;
   line-height: 1.0;
   text-align: center;
-  box-shadow: 0 .1rem .4rem 0 #ddd;
+  box-shadow: 0 1px 2px 0 #aaa;
+  background-color: #333;
+  color: #fff;
 }
+
 .menu-wrapper {
-  max-width: 40rem;
+  max-width: 36rem;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
 }
+
 @media (max-width: 36rem) {
   .menu-wrapper {
     width: 100%;
@@ -91,33 +104,40 @@ a:hover {
     padding-right: .8rem;
   }
 }
+
 .menu a {
-  color: #333;
+  color: inherit;
   text-decoration: none;
 }
+
 .menu a:hover {
   text-decoration: none;
 }
+
 .site-name {
   padding-right: .4rem;
   margin-right: .4rem;
 }
+
 .site-menu {
   float: right;
   font-size: 1.2rem;
-  color: white;
+  color: inherit;
 }
+
 .site-menu a:hover {
   text-decoration: underline;
 }
+
 .container {
   max-width: 36rem;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 3rem;
 }
+
 @media (max-width: 36rem) {
   .container {
     width: 100%;
@@ -127,40 +147,49 @@ a:hover {
     padding-right: .4rem;
   }
 }
+
 .section {
   text-align: left;
   margin-top: 1rem;
 }
+
 .section-image {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
+
 .section-wrap {
   margin-top: 1rem;
   background-color: #ffffff;
-  box-shadow: 0 .1rem .4rem 0 #ddd;
+  box-shadow: 0 1px 2px 0 #ddd;
   padding: 1rem;
 }
+
 @media (max-width: 36rem) {
   .section {
     margin-top: .4rem;
   }
+
   .section-wrap {
     margin-top: .4rem;
   }
 }
+
 .section-item {
   display: block;
   line-height: 1.25;
   overflow: auto;
 }
+
 .section-title {
   width: 100%;
   font-size: 1.1rem;
 }
+
 .section-content {
   padding-top: .8rem;
   width: 100%;
 }
+
 .section-action {
   text-align: right;
   float: right;
@@ -169,67 +198,85 @@ a:hover {
   line-height: 1rem;
   font-size: .8rem;
 }
+
 .section-action .fa {
   margin-left: .6rem;
   margin-right: .2rem;
   font-size: 1rem;
 }
+
 .section-footer {
   padding-top: .8rem;
   display: flex;
   line-height: 1.25;
 }
+
 .section-footer-icon {
   width: auto;
 }
+
 .section-footer-name {
   padding-left: .8rem;
   width: 40%;
 }
+
 .section-time {
   text-align: right;
   color: #bbb;
   float: right;
 }
+
 .section-time a {
   color: #bbb;
 }
+
 .section-headline:before {
   content: "top";
   color: #fbfbfb;
   background-color: #e95260;
   padding: .2rem;
 }
+
 .blank {
   background-color: #fbfbfb;
 }
+
 .info {
   background-color: #6ec3b4;
 }
+
 .info a {
   color: #393c40;
 }
+
 .hint {
   background-color: #facb5b;
 }
+
 .warning {
   background-color: #e95260;
 }
+
 .hover-effect:hover {
-  box-shadow: 0 .1rem .4rem .1rem #ddd;
+  box-shadow: 0 1px 2px 1px #ddd;
 }
+
 .left {
   text-align: left;
 }
+
 .right {
   text-align: right;
 }
+
 .mid {
   text-align: center;
 }
+
 img {
   max-width: 100%
 }
+
 .text-center {
   text-align: center;
 }

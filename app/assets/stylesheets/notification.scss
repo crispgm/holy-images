@@ -4,12 +4,14 @@
 
 .site-menu {
   .fa {
-    color: #777;
+    color: #ddd;
+
     &:hover {
-      color: #333;
+      color: #fff;
     }
   }
+
   .badge {
-    color: #333;
+    color: #fff;
   }
 }
