@@ -6,6 +6,10 @@
 
 HolyImages is a simple image sharing social network.
 
+## Screenshots
+
+![](/screenshot.png)
+
 ## Features
 
 * Image Upload
@@ -14,6 +18,7 @@ HolyImages is a simple image sharing social network.
 * Likes & Comments
 * User System
 * Notifications
+* PC/Mobile friendly
 
 ## Plan
 
