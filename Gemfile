@@ -62,3 +62,5 @@ group :test do
   gem "simplecov"
   gem "codeclimate-test-reporter", "~> 1.0.0"
 end
+# Added at 2018-03-28 21:33:44 +0800 by david:
+gem "scss-lint", "~> 0.7.0", :group => [:test]
