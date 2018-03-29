@@ -1,12 +1,11 @@
+// scss-lint:disable Comment
 /*
  *= require_self
  *= require_tree .
  */
 
-/*
- * Theme of Crisp Wiki
- * Copyright(c) David Zhang, 2018
- */
+// Theme of Crisp Wiki
+// Copyright(c) David Zhang, 2018
 
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
@@ -17,6 +16,8 @@ $warning-red: #e95260;
 $dark-grey: #333;
 $light-shadow: #ddd;
 $dark-shadow: #aaa;
+$light-grey: #bbb;
+$cyan: #6ec3b4;
 
 * {
   box-sizing: border-box;
@@ -221,12 +222,12 @@ a {
 }
 
 .section-time {
-  color: #bbb;
+  color: $light-grey;
   float: right;
   text-align: right;
 
   a {
-    color: #bbb;
+    color: $light-grey;
   }
 }
 
@@ -235,10 +236,10 @@ a {
 }
 
 .info {
-  background-color: #6ec3b4;
+  background-color: $cyan;
 
   a {
-    color: #393c40;
+    color: $dark-grey;
   }
 }
 
