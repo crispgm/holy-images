@@ -2,16 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$almost-white: #fbfbfb;
+$light-shadow: #ddd;
+
 .site-menu {
   .fa {
-    color: #ddd;
+    color: $light-shadow;
 
     &:hover {
-      color: #fff;
+      color: $almost-white;
     }
   }
 
   .badge {
-    color: #fff;
+    color: $almost-white;
   }
 }

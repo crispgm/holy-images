@@ -5,11 +5,18 @@
 
 /*
  * Theme of Crisp Wiki
- * Copyright(c) David Zhang, 2016
+ * Copyright(c) David Zhang, 2018
  */
 
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+$almost-white: #fbfbfb;
+$table-yellow: #facb5b;
+$warning-red: #e95260;
+$dark-grey: #333;
+$light-shadow: #ddd;
+$dark-shadow: #aaa;
 
 * {
   box-sizing: border-box;
@@ -27,8 +34,8 @@ html {
 }
 
 body {
-  background-color: #fbfbfb;
-  color: #333;
+  background-color: $almost-white;
+  color: $dark-grey;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
@@ -38,8 +45,8 @@ body {
   word-wrap: break-word;
 
   &::selection {
-    background-color: #333;
-    color: #fbfbfb;
+    background-color: $dark-grey;
+    color: $almost-white;
   }
 }
 
@@ -61,12 +68,12 @@ table {
 }
 
 th {
-  background-color: #facb5b;
+  background-color: $table-yellow;
   padding: .2rem .4rem;
 }
 
 tr:hover {
-  background-color: #facb5b;
+  background-color: $table-yellow;
 }
 
 a {
@@ -79,9 +86,9 @@ a {
 }
 
 .menu {
-  background-color: #333;
-  box-shadow: 0 1px 2px 0 #aaa;
-  color: #fff;
+  background-color: $dark-grey;
+  box-shadow: 0 1px 2px 0 $dark-shadow;
+  color: $almost-white;
   font-size: 1.4rem;
   line-height: 1;
   padding: 1.5rem 0;
@@ -151,8 +158,8 @@ a {
 }
 
 .section-wrap {
-  background-color: #fff;
-  box-shadow: 0 1px 2px 0 #ddd;
+  background-color: $almost-white;
+  box-shadow: 0 1px 2px 0 $light-shadow;
   margin-top: 1rem;
   padding: 1rem;
 }
@@ -223,15 +230,8 @@ a {
   }
 }
 
-.section-headline:before {
-  background-color: #e95260;
-  color: #fbfbfb;
-  content: 'top';
-  padding: .2rem;
-}
-
 .blank {
-  background-color: #fbfbfb;
+  background-color: $almost-white;
 }
 
 .info {
@@ -243,15 +243,15 @@ a {
 }
 
 .hint {
-  background-color: #facb5b;
+  background-color: $table-yellow;
 }
 
 .warning {
-  background-color: #e95260;
+  background-color: $warning-red;
 }
 
 .hover-effect:hover {
-  box-shadow: 0 1px 2px 1px #ddd;
+  box-shadow: 0 1px 2px 1px $light-shadow;
 }
 
 .left {
