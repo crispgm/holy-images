@@ -32,8 +32,8 @@
         <span class="comment-count" id="comment-count-<%= image.id %>"><%= image.comments.count %></span>
       </div>
       <div class="section-footer">
-        <div class="section-footer-icon">
-          <%= image_tag(image.user.gravatar_url, :class => "gravatar") %>
+        <div class="section-footer-icon gravatar">
+          <%= image_tag(image.user.gravatar_url) %>
         </div>
         <div class="section-footer-name">
           <%= link_to "#{image.user.name}", "/u/#{image.user.name}" %>

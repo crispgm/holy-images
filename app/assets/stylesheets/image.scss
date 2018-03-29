@@ -1,8 +1,13 @@
-.upload input {
+$almost-white: #fbfbfb;
+$dark-shadow: #aaa;
+$light-border: #eee;
+
+.upload {
   margin-top: .4rem;
 
-  [type=text] {
-    border: .1rem solid #aaa;
+  [type=text],
+  [type=password] {
+    border: 1px solid $dark-shadow;
     border-radius: 2px;
     font-size: 1.5rem;
     width: 100%;
@@ -13,14 +18,20 @@
   }
   
   [type=file] {
-    border: .1rem solid #aaa;
+    border: 1px solid $dark-shadow;
+    border-radius: 2px;
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0 .8rem;
     width: 100%;
   }
 }
 
-img.gravatar {
-  height: 2rem;
-  width: 2rem;
+.gravatar {
+  img {
+    height: 2rem;
+    width: 2rem;
+  }
 }
 
 .section-explore {
@@ -45,7 +56,7 @@ img.gravatar {
 }
 
 .section-overlay {
-  color: #fff;
+  color: $almost-white;
   display: none;
   font-size: 1rem;
   font-weight: bold;
@@ -63,12 +74,14 @@ img.gravatar {
 
 .section-blur {
   img {
+    // scss-lint:disable VendorPrefix
     -webkit-filter: none;
     filter: none;
   }
 
   &:hover {
     img {
+      // scss-lint:disable VendorPrefix
       -webkit-filter: blur(2px);
       filter: blur(2px);
     }
@@ -107,7 +120,7 @@ img.gravatar {
 }
 
 .comment-new {
-  border: .1rem solid #aaa;
+  border: .1rem solid $dark-shadow;
   border-radius: 4px;
   height: 3rem;
   padding: .4rem;
@@ -115,7 +128,7 @@ img.gravatar {
 }
 
 .section-comment {
-  border-top: .1rem solid #eee;
+  border-top: .1rem solid $light-border;
   padding-bottom: .4rem;
   padding-top: .8rem;
 }

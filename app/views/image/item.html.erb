@@ -6,9 +6,9 @@
     <div class="section-title">
       <%= t(:like) %>
     </div>
-    <div class="section-content">
+    <div class="section-content gravatar">
       <% @likes.each do |like| %>
-        <%= image_tag(like.user.gravatar_url, :class => "gravatar", :title => like.user.name) %>
+        <%= image_tag(like.user.gravatar_url, :title => like.user.name) %>
       <% end %>
     </div>
   </div>
