@@ -1,26 +1,26 @@
 .upload input {
   margin-top: .4rem;
-}
 
-.upload input[type=text] {
-  width: 100%;
-  border-radius: 2px;
-  border: .1rem solid #aaa;
-  font-size: 1.5rem;
-}
+  [type=text] {
+    border: .1rem solid #aaa;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    width: 100%;
+  }
 
-.upload input[type=submit] {
-  font-size: 1.2rem;
-}
-
-.upload input[type=file] {
-  border: .1rem solid #aaa;
-  width: 100%;
+  [type=submit] {
+    font-size: 1.2rem;
+  }
+  
+  [type=file] {
+    border: .1rem solid #aaa;
+    width: 100%;
+  }
 }
 
 img.gravatar {
-  width: 2rem;
   height: 2rem;
+  width: 2rem;
 }
 
 .section-explore {
@@ -31,42 +31,48 @@ img.gravatar {
 .section-square {
   padding-left: .3rem;
   padding-top: .2rem;
-}
 
-.section-square img {
-  width: 11rem;
-  height: 11rem;
+  img {
+    height: 11rem;
+    width: 11rem;
+  }
+
+  &:hover {
+    .section-overlay {
+      display: block;
+    }
+  }
 }
 
 .section-overlay {
-  width: 11rem;
+  color: #fff;
+  display: none;
+  font-size: 1rem;
+  font-weight: bold;
   height: 11rem;
   line-height: 11rem;
   position: absolute;
   text-align: center;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
+  width: 11rem;
   z-index: 999;
-  display: none;
+
+  .fa {
+    margin-right: .4rem;
+  }
 }
 
-.section-overlay .fa {
-  margin-right: .4rem;
-}
+.section-blur {
+  img {
+    -webkit-filter: none;
+    filter: none;
+  }
 
-.section-square:hover .section-overlay {
-  display: block;
-}
-
-.section-blur img{
-  -webkit-filter: none;
-  filter: none;
-}
-
-.section-blur:hover img{
-  -webkit-filter: blur(2px);
-  filter: blur(2px);
+  &:hover {
+    img {
+      -webkit-filter: blur(2px);
+      filter: blur(2px);
+    }
+  }
 }
 
 @media (max-width: 36rem) {
@@ -76,14 +82,14 @@ img.gravatar {
   }
 
   .section-square {
-    /*width: 33%;*/
-    /*height: 33%;*/
+    // width: 33%;
+    // height: 33%;
     text-align: center;
   }
 
   .section-square img {
-    width: 7.6rem;
     height: 7.6rem;
+    width: 7.6rem;
   }
 
   .section-overlay {
@@ -93,36 +99,30 @@ img.gravatar {
   .section-square:hover .section-overlay {
     display: none;
   }
-
-  .section-blur {
-  }
 }
 
 .site-menu .fa {
-  margin-left: .4rem;
   font-size: 1.5rem;
+  margin-left: .4rem;
 }
 
 .comment-new {
-  width: 100%;
+  border: .1rem solid #aaa;
+  border-radius: 4px;
   height: 3rem;
   padding: .4rem;
-  border-radius: 4px;
-  border: .1rem solid #aaa;
+  width: 100%;
 }
 
 .section-comment {
   border-top: .1rem solid #eee;
-  padding-top: .8rem;
   padding-bottom: .4rem;
-}
-
-.section-comment-header {
+  padding-top: .8rem;
 }
 
 .section-comment-content {
-  padding-top: .4rem;
   padding-bottom: .4rem;
+  padding-top: .4rem;
 }
 
 .section-comment-name {
