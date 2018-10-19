@@ -14,6 +14,9 @@
 <div class="section">
   <div class="section-wrap">
     <div class="section-item">
+    <% if @notifications.size == 0 %>
+      <div><%= t("notification.empty") %></div>
+    <% end %>
     <% @notifications.each do |notification| %>
       <div class="section-time">
         <%= format_time(notification.created_at) %>

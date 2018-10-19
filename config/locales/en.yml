@@ -67,3 +67,4 @@ en:
     like: "liked your photo"
     comment: "commented your photo"
     clear_all: "Mark all as read"
+    empty: "No notifications."
