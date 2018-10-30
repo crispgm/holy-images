@@ -10,14 +10,15 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-$almost-white: #fbfbfb;
+$dark-grey:    #343a40;
+$dark-shadow:  #868e96;
+$light-grey:   #adb5bd;
+$light-shadow: #ced4da;
+$almost-white: #f8f9fa;
+
+$info-bg:      #adb5bd;
 $table-yellow: #facb5b;
-$warning-red: #e95260;
-$dark-grey: #333;
-$light-shadow: #ddd;
-$dark-shadow: #aaa;
-$light-grey: #bbb;
-$cyan: #6ec3b4;
+$warning-red:  #e95260;
 
 * {
   box-sizing: border-box;
@@ -236,7 +237,7 @@ a {
 }
 
 .info {
-  background-color: $cyan;
+  background-color: $info-bg;
 
   a {
     color: $dark-grey;
