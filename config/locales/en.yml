@@ -21,10 +21,8 @@ en:
   upload_specs_title: "Image Specifications"
   upload_specs_contents: |
     <li>At least 2 characters for title</li>
-    <li>Image upload and URL are both allowed</li>
     <li>Only JPEGs are accepted</li>
     <li>30MB limit of image size</li>
-    <li>Ensure the loading speed of external URLs</li>
     <li>Keep the image quality and maintain community order</li>
   upload_image_title: "Title"
   upload_image_file: "Image Upload (Recommended)"
