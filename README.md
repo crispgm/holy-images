@@ -6,6 +6,8 @@
 
 HolyImages is a simple image sharing social network.
 
+_Notice_: the login system is for non-production only, without proper status check on server side.
+
 ## Screenshots
 
 ![](/screenshot.png)
