@@ -1,7 +1,7 @@
 language: ruby
 sudo: false
 rvm:
-  - 2.3.0
+  - 2.6.0
 env:
   CODECLIMATE_REPO_TOKEN: 63287804b219939c438c95acb8d4bf844a6773c59444e3c21efda942eae9ba7e
 before_script:
