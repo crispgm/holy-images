@@ -12,7 +12,7 @@ class Image < ApplicationRecord
   validates_attachment_content_type :img_file, :content_type => /\Aimage/
   validates_attachment_file_name :img_file, :matches => [/jpe?g\Z/, /JPE?G\Z/]
   do_not_validate_attachment_file_type :img_file
-  validates :filter, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 41}
+  validates :filter, numericality: {greater_than_or_equal_to: 0}
 
   default_scope do
     order(created_at: :desc)
@@ -58,6 +58,36 @@ class Image < ApplicationRecord
     'Crema',
     'Dogpatch',
     'Earlybird',
+    'Gingham',
+    'Ginza',
+    'Hefe',
+    'Helena',
+    'Hudson',
+    'Inkwell',
+    'Kelvin',
+    'Juno',
+    'Lark',
+    'Lo-Fi',
+    'Ludwig',
+    'Maven',
+    'Mayfair',
+    'Moon',
+    'Nashville',
+    'Perpetua',
+    'Poprocket',
+    'Reyes',
+    'Rise',
+    'Sierra',
+    'Skyline',
+    'Slumber',
+    'Stinson',
+    'Sutro',
+    'Toaster',
+    'Valencia',
+    'Vesper',
+    'Walden',
+    'Willow',
+    'X-Pro II',
   ]
 
   class << self
@@ -73,6 +103,13 @@ class Image < ApplicationRecord
   def filter_name
     return '' if filter.nil? || filter < 0 || filter >= INSTAGRAM_FILTERS.size
 
-    'filter-' + INSTAGRAM_FILTERS[filter].downcase
+    name = INSTAGRAM_FILTERS[filter]
+    if name == 'Lo-Fi'
+      'filter-lofi'
+    elsif name == 'X-Pro II'
+      'filter-xpro-ii'
+    else
+      'filter-' + name.downcase
+    end
   end
 end
