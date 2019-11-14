@@ -25,8 +25,9 @@ zh-CN:
     <li>上传图片最大不超过30 MB</li>
     <li>尽自己所能提高照片质量，维护社区秩序</li>
   upload_image_title: "标题"
-  upload_image_file: "图片上传（推荐）"
+  upload_image_file: "图片上传"
   upload_image_url: "图片外链（可选）"
+  upload_image_filter: "选择滤镜"
   upload_image_submit: "发布"
   upload_success: "非常感谢！图片上传成功了。"
   index_total: "总共"

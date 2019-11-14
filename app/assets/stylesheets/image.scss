@@ -2,6 +2,10 @@ $almost-white: #fbfbfb;
 $dark-shadow: #aaa;
 $light-border: #eee;
 
+figure {
+  margin: 0;
+}
+
 .upload {
   margin-top: .4rem;
 
@@ -16,7 +20,7 @@ $light-border: #eee;
   [type=submit] {
     font-size: 1.2rem;
   }
-  
+
   [type=file] {
     border: 1px solid $dark-shadow;
     border-radius: 2px;
@@ -24,6 +28,14 @@ $light-border: #eee;
     line-height: 2rem;
     padding: 0 .8rem;
     width: 100%;
+  }
+
+  select {
+    border: 1px solid $dark-shadow;
+    border-radius: 2px;
+    height: 2rem;
+    line-height: 2rem;
+    width: 8rem;
   }
 }
 

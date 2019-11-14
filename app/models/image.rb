@@ -12,6 +12,7 @@ class Image < ApplicationRecord
   validates_attachment_content_type :img_file, :content_type => /\Aimage/
   validates_attachment_file_name :img_file, :matches => [/jpe?g\Z/, /JPE?G\Z/]
   do_not_validate_attachment_file_type :img_file
+  validates :filter, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 41}
 
   default_scope do
     order(created_at: :desc)
@@ -25,7 +26,7 @@ class Image < ApplicationRecord
     exif = {}
     begin
       image_local_original = img_file(:original).split("?").at(0)
-      
+
       image_prefix = Rails.application.config.runtime_path
 
       exif_data = Exif::Data.new("#{image_prefix}/public#{image_local_original}")
@@ -42,5 +43,36 @@ class Image < ApplicationRecord
     end
 
     exif
+  end
+
+  INSTAGRAM_FILTERS = [
+    '',
+    '1977',
+    'Aden',
+    'Amaro',
+    'Ashby',
+    'Brannan',
+    'Brooklyn',
+    'Charmes',
+    'Clarendon',
+    'Crema',
+    'Dogpatch',
+    'Earlybird',
+  ]
+
+  class << self
+    def options_for_filter
+      filter_for_options = {}
+      INSTAGRAM_FILTERS.each_with_index do |f, i|
+        filter_for_options[f] = i
+      end
+      filter_for_options
+    end
+  end
+
+  def filter_name
+    return '' if filter.nil? || filter < 0 || filter >= INSTAGRAM_FILTERS.size
+
+    'filter-' + INSTAGRAM_FILTERS[filter].downcase
   end
 end

@@ -16,9 +16,15 @@
       </div>
       <div class="section-content">
         <% if defined?(nolink) && nolink == true %>
-          <%= image_tag(image.img_url(style)) %>
+          <figure class="<%= image.filter_name %>">
+            <%= image_tag(image.img_url(style)) %>
+          </figure>
         <% else %>
-          <%= link_to(image_tag(image.img_url(style)), "/image/#{image.id}") %>
+          <a href="<%= "/image/#{image.id}" %>">
+            <figure class="<%= image.filter_name %>">
+            <%= image_tag(image.img_url(style)) %>
+            </figure>
+          </a>
         <% end %>
       </div>
       <div class="section-action">

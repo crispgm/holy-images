@@ -25,8 +25,9 @@ en:
     <li>30MB limit of image size</li>
     <li>Keep the image quality and maintain community order</li>
   upload_image_title: "Title"
-  upload_image_file: "Image Upload (Recommended)"
+  upload_image_file: "Image Upload"
   upload_image_url: "External URL (Optional)"
+  upload_image_filter: "Choose filter"
   upload_image_submit: "Submit"
   upload_success: "Thanks for your upload."
   index_total: "Total"
