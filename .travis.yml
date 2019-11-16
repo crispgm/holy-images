@@ -4,6 +4,9 @@ rvm:
   - 2.6.0
 env:
   CODECLIMATE_REPO_TOKEN: 63287804b219939c438c95acb8d4bf844a6773c59444e3c21efda942eae9ba7e
+before_install:
+  - gem update --system
+  - gem install bundler
 before_script:
   - cp config/secrets.travis.yml config/secrets.yml
 script:
@@ -15,4 +18,3 @@ after_success:
   - bundle exec codeclimate-test-reporter
 notifications:
   email: false
-  slack: navyblue-team:ioO5diAGc5WUQVDKc5BH1UbE

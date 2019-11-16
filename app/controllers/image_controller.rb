@@ -46,10 +46,11 @@ class ImageController < ApplicationController
   end
 
   def upload
+    @filters = Image.options_for_filter
   end
 
   def create
-    @image = Image.new(params.require(:image).permit(:title, :url, :img_file))
+    @image = Image.new(params.require(:image).permit(:title, :url, :img_file, :filter))
     @image.user = User.find(current_user.id)
 
     if @image.save
@@ -88,7 +89,7 @@ class ImageController < ApplicationController
       :status => nil,
       :cur_num => nil
     }
-    
+
     # check existence
     @like = Like.unscoped.find_by(image_id: image_id, user_id: user_id, status: [Like::STATUS_LIKE, Like::STATUS_UNLIKE])
 
@@ -100,7 +101,7 @@ class ImageController < ApplicationController
         @like.status = Like::STATUS_LIKE
         result[:status] = Like::STATUS_LIKE
       end
-      
+
       if @like.save
         result[:cur_num] = get_likes_num(image_id)
       else
