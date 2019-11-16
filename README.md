@@ -29,9 +29,9 @@ _Notice_: the login system is for non-production only, without proper status che
 ## Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/index.png" width="300" />
-  <img src="docs/screenshots/explore.png" width="300" />
-  <img src="docs/screenshots/upload.png" width="300" />
+  <img src="docs/screenshots/index.png" width="270" />
+  <img src="docs/screenshots/explore.png" width="270" />
+  <img src="docs/screenshots/upload.png" width="270" />
 </p>
 
 ## Setup
