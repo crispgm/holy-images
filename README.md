@@ -8,10 +8,6 @@ HolyImages is a simple image sharing social network.
 
 _Notice_: the login system is for non-production only, without proper status check on server side.
 
-## Screenshots
-
-![](/screenshot.png)
-
 ## Features
 
 * Image Upload (with Filters like Instagram)
@@ -25,10 +21,18 @@ _Notice_: the login system is for non-production only, without proper status che
 
 ## Plan
 
-- [ ] Editing & Deleting
-- [ ] Follow
-- [ ] Archive
-- [ ] Sharing
+* [ ] Editing & Deleting
+* [ ] Follow
+* [ ] Archive
+* [ ] Sharing
+
+## Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/index.png" width="220" />
+  <img src="docs/screenshots/explore.png" width="220" />
+  <img src="docs/screenshots/upload.png" width="220" />
+</p>
 
 ## Setup
 
