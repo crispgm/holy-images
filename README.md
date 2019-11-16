@@ -14,17 +14,21 @@ _Notice_: the login system is for non-production only, without proper status che
 
 ## Features
 
-* Image Upload
+* Image Upload (with Filters like Instagram)
 * Image Explore
 * EXIF Data
 * Likes & Comments
 * User System
 * Notifications
 * PC/Mobile friendly
+* I18N in English and Simplified Chinese
 
 ## Plan
 
-- [ ] Filters
+- [ ] Editing & Deleting
+- [ ] Follow
+- [ ] Archive
+- [ ] Sharing
 
 ## Setup
 
