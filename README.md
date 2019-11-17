@@ -39,6 +39,10 @@ _Notice_: the login system is for non-production only, without proper status che
 1. Install dependencies
 	* ImageMagick
 	* libexif
+    ```
+    $ brew install imagemagick
+    $ brew install libexif
+    ```
 2. Install gems
 	```
 	$ bundle install
@@ -57,3 +61,7 @@ _Notice_: the login system is for non-production only, without proper status che
 	```
 	$ RAILS_SERVE_STATIC_FILES=true PORT=9876 bin/rails server -e production -d
 	```
+
+## License
+
+MIT
