@@ -17,7 +17,9 @@
           <div class="section-overlay">
             <%= icon("heart") %><%= image.likes.count %>
           </div>
-          <%= image_tag(image.img_url(:thumbnail)) %>
+          <figure class="<%= image.filter_name %>">
+            <%= image_tag(image.img_url(:thumbnail)) %>
+          </figure>
         </a>
       </div>
       <% end %>
