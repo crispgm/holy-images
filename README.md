@@ -17,10 +17,11 @@ _Notice_: the login system is for non-production only, without proper status che
 * User System
 * Notifications
 * PC/Mobile friendly
-* I18N in English and Simplified Chinese
+* I18N Support (current with English and Simplified Chinese)
 
 ## Plan
 
+* [x] Filters
 * [ ] Editing & Deleting
 * [ ] Follow
 * [ ] Archive
@@ -59,7 +60,7 @@ _Notice_: the login system is for non-production only, without proper status che
 	```
 6. Serve
 	```
-	$ RAILS_SERVE_STATIC_FILES=true PORT=9876 bin/rails server -e production -d
+	$ RAILS_SERVE_STATIC_FILES=true PORT=<:port> bin/rails server -e production -d
 	```
 
 ## License
