@@ -100,7 +100,7 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     puma (3.12.4)
-    rack (2.2.2)
+    rack (2.2.3)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.7.2)
